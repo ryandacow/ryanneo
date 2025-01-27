@@ -22,9 +22,9 @@ const About = () => {
       <div className="w-full lg:w-2/3 px-6">
         <h2 className="text-3xl font-bold mb-4">About Me</h2>
         <p className="text-lg mb-6 leading-relaxed">
-          Hi, I’m Ryan! An aspiring business analyst who indulges in problem solving and loves learning new things!<br />
+          Hi, I’m Ryan! An aspiring business analyst who indulges in problem solving and loves exploring new things!<br />
           I'm also an avid athlete, playing Ultimate Frisbee and Football. Check out my blog for some highlights of mine 🤭<br />
-          Feel free to strike up a conversation on my telegram below! I'm always excited to meet new people 😆
+          Feel free to connect via my socials below! I'm always excited to meet new people 😆
 
         </p>
         {/* Resume Download */}

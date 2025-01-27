@@ -1,0 +1,40 @@
+export const projects = [
+  {
+    id: 1,
+    name: "ExpenSplit Telegram Bot",
+    context: "Personal Project",
+    shortDesc: "Telegram bot for tracking and splitting group expenses",
+    detailedDesc: `First ever project for me to practice Python, a Telegram bot that allows users to easily track and split expenses among group members.\n\nIt supports adding expenses, tracking balances, and exporting summaries.`,
+    image: "/ExpenSplit.png",
+    source: "https://github.com/ryandacow/ExpenSplit",
+    live: "https://t.me/expensplit_bot",
+    blog: "/blog/ExpenSplit",
+    color: { bg: "bg-blue-100", text: "text-blue-800" },
+  },
+  {
+    id: 2,
+    name: "Project Two",
+    context: "Hackathon",
+    shortDesc: "A concise description of Project Two.",
+    detailedDesc:
+      "This is a more detailed explanation of Project Two, highlighting key features and technologies used.",
+    image: "/ExpenSplit.png",
+    source: "https://github.com/ryandacow/ExpenSplit",
+    live: "https://t.me/expensplit_bot",
+    blog: "/blog/ExpenSplit",
+    color: { bg: "bg-green-100", text: "text-green-800" },
+  },
+  {
+    id: 3,
+    name: "Project Three",
+    context: "Course Project",
+    shortDesc: "A concise description of Project Three.",
+    detailedDesc:
+      "This is a more detailed explanation of Project Three, highlighting key features and technologies used.",
+    image: "/project3.png",
+    source: "https://github.com/ryandacow/project-three",
+    live: "https://project-three.example.com",
+    blog: "/blog/project-three",
+    color: { bg: "bg-red-100", text: "text-red-800" },
+  },
+];

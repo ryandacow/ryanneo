@@ -36,6 +36,35 @@ html {
   @apply scale-110 shadow-lg;
 }
 
+/* Perspective and Flip */
+.perspective {
+  perspective: 1000px;
+}
+
+.transform-style-preserve {
+  transform-style: preserve-3d;
+}
+
+.transform-style-backface-hidden {
+  backface-visibility: hidden;
+}
+
+.rotate-y-180 {
+  transform: rotateY(180deg);
+}
+
+/* Holographic Effect */
+.group-hover\:shadow-holo:hover {
+  box-shadow: 0 0 20px rgba(255, 0, 255, 0.5),
+    0 0 20px rgba(0, 255, 255, 0.5),
+    0 0 20px rgba(255, 255, 0, 0.5);
+  transition: all 0.5s ease-in-out;
+}
+
+.group-hover\:scale-105:hover {
+  transform: scale(1.05);
+}
+
 /* 
 .cow:hover {
   transform: scale(1.2); Cow grows slightly when hovered
