@@ -12,71 +12,81 @@ const ProjectCard = ({ project }) => {
 
   return (
     <div
-      className="group perspective cursor-pointer"
+      className="group perspective cursor-pointer w-[18rem] mx-auto" // Fixed width and centralized
       onClick={handleFlip}
     >
       <div
-        className={`relative w-full h-96 transform-style-preserve transition-transform duration-500 ${
+        className={`relative h-96 transform-style-preserve transition-transform duration-500 ${
           isFlipped ? "rotate-y-180" : ""
         }`}
       >
         {/* Frontside */}
         <div
-          className={`absolute w-full h-full rounded-lg shadow-lg overflow-hidden transform-style-backface-hidden transition-all duration-500 group-hover:scale-102 group-hover:shadow-lg ${
+          className={`absolute w-full h-full rounded-lg shadow-lg overflow-hidden transform-style-backface-hidden transition-all hover:translate-y-[-3px] group-hover:shadow-lg ${
             project.color.bg
           } ${project.color.text}`}
         >
-          <div className="flex flex-col items-center justify-center h-full px-6">
-            <img
-              src={project.image}
-              alt={project.name}
-              className="w-28 h-28 mb-4 object-contain" // Slightly larger image
-            />
+          <div className="flex flex-col items-center justify-center h-full px-5">
+            {/* Render Icon or Image */}
+            {project.image && (<img
+                src={project.image}
+                alt={project.name}
+                className={`${
+                  project.scale || "w-28 h-28"
+                } mb-4 object-contain`}
+              />)}
             <h3 className="text-2xl font-bold mb-2">{project.name}</h3>
             <p className="text-lg font-semibold text-center mb-4">
-              {project.context} {/* Centered and larger context */}
+              {project.context}
             </p>
-            <p className="text-left text-base w-full">{project.shortDesc}</p> {/* Larger shortDesc */}
+            <p className="text-left text-base w-full">{project.shortDesc}</p>
           </div>
         </div>
 
         {/* Backside */}
         <div
-          className={`absolute w-full h-full rounded-lg shadow-lg overflow-hidden transform rotate-y-180 transform-style-backface-hidden transition-all duration-500 group-hover:scale-102 ${
+          className={`absolute w-full h-full rounded-lg shadow-lg overflow-hidden transform rotate-y-180 transform-style-backface-hidden transition-all hover:translate-y-[-3px] ${
             project.color.bg
           } ${project.color.text}`}
         >
-          <div className="flex flex-col items-center justify-center h-full px-6">
-            <h3 className="text-2xl font-bold mb-4">Project Details</h3>
-            <p
-              className="text-left text-base w-full mb-6"
-              dangerouslySetInnerHTML={{
-                __html: project.detailedDesc.replace(/\n/g, "<br />"),
-              }}
-            ></p>
-            <div className="flex gap-4">
+          <div className="flex flex-col items-center justify-center h-full px-4 py-6">
+            <h3 className="text-2xl font-bold mb-6 text-center">
+              More Details!
+            </h3>
+            <div className="flex flex-wrap gap-4 justify-center max-w-full px-4">
+              {/* Source Button */}
               <a
                 href={project.source}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-4 py-2 bg-gray-700 text-white rounded-lg shadow-md hover:bg-gray-800 transition flex items-center gap-2"
+                className={`px-4 py-2 border-2 rounded-lg shadow-md transition text-sm flex items-center gap-2 ${
+                  project.color.text
+                } ${project.color.bg} border-${project.color.text} hover:translate-y-[-3px]`}
               >
                 <FaGithub /> Source
               </a>
+              {/* View Button */}
               <a
                 href={project.live}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-4 py-2 bg-indigo-500 text-white rounded-lg shadow-md hover:bg-indigo-600 transition flex items-center gap-2"
+                className={`px-4 py-2 border-2 rounded-lg shadow-md transition text-sm flex items-center gap-2 ${
+                  project.color.text
+                } ${project.color.bg} border-${project.color.text} hover:translate-y-[-3px]`}
               >
                 <FaExternalLinkAlt /> View
               </a>
-              <a
-                href={project.blog}
-                className="px-4 py-2 bg-green-500 text-white rounded-lg shadow-md hover:bg-green-600 transition flex items-center gap-2"
-              >
-                <FaBook /> Read More
-              </a>
+              {/* Optional Blog Button */}
+              {project.blog && (
+                <a
+                  href={project.blog}
+                  className={`px-4 py-2 border-2 rounded-lg shadow-md transition text-sm flex items-center gap-2 ${
+                    project.color.text
+                  } ${project.color.bg} border-${project.color.text} hover:translate-y-[-3px]`}
+                >
+                  <FaBook /> Blog
+                </a>
+              )}
             </div>
           </div>
         </div>
