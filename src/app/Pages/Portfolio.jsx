@@ -3,8 +3,8 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { Code, Award, Briefcase } from "lucide-react";
-import ProjectCard from "../components/ProjectCard";
-import TechStackIcon from "../components/TechStackIcon";
+import ProjectCard from "../Components/ProjectCard";
+import TechStackIcon from "../Components/TechStackIcon";
 import { projects } from "../Data/dataProjects"; 
 import { FaHtml5, FaCss3Alt, FaJs, FaReact, FaNodeJs } from "react-icons/fa";
 import { SiFirebase, SiTailwindcss, SiVercel } from "react-icons/si";
