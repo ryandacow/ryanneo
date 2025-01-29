@@ -40,7 +40,7 @@ const Hero = () => {
   return (
     <section 
       id="home"
-      className="flex flex-col lg:flex-row items-center justify-center bg-gray-50 dark:bg-gray-900 px-32 pt-[10rem] pb-6 lg:px-24 lg:pb-24"
+      className="flex flex-col lg:flex-row items-center justify-center bg-gray-50 dark:bg-gray-900 px-32 pt-[10rem] pb-6 lg:px-24 lg:pb-30"
       style = {{ scrollMarginTop: "6rem" }}
     >
       {/* Text Content */}

@@ -23,7 +23,7 @@ const About = () => {
   return (
     <section
   id="about"
-  className="min-h-[80vh] flex flex-col lg:flex-row items-center justify-center bg-gray-50 dark:bg-gray-900 text-gray-800 dark:text-gray-200 px-6"
+  className="min-h-[80vh] flex flex-col lg:flex-row items-center justify-center bg-gray-50 dark:bg-gray-900 text-gray-800 dark:text-gray-200 px-6 pt-30 pb-30"
 >
       <div className="w-full max-w-6xl grid grid-cols-1 lg:grid-cols-3 gap-6">
         {/* Left: Profile Image, Resume, and Stats */}

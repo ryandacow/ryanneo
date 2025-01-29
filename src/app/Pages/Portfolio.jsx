@@ -29,7 +29,7 @@ export default function PortfolioSection() {
   return (
     <section
       id="portfolio"
-      className="min-h-[80vh] w-full bg-gray-50 dark:bg-gray-900 text-gray-800 dark:text-gray-200 py-20 pb-30" // Adjusted height
+      className="min-h-[80vh] w-full bg-gray-50 dark:bg-gray-900 text-gray-800 dark:text-gray-200 py-20 pb-30 pt-24" // Adjusted height
     >
       <div className="container mx-auto px-6">
         
