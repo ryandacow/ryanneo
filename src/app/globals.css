@@ -65,8 +65,12 @@ html {
   transform: scale(1.05);
 }
 
-/* 
-.cow:hover {
-  transform: scale(1.2); Cow grows slightly when hovered
-  transition: transform 0.2s ease;
-} */
+/* Custom clip-path for image spill effect */
+.clip-path-spill {
+  clip-path: polygon(0 15, 100% 15, 100% 90%, 50% 100%, 0 90%);
+}
+
+/* Smooth scroll offset for fixed navbar */
+section {
+  scroll-margin-top: 6rem;
+}

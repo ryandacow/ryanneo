@@ -3,11 +3,11 @@
 import React, { useState, useEffect } from "react";
 
 const Navbar = () => {
-  const [activeSection, setActiveSection] = useState("");
+  const [activeSection, setActiveSection] = useState("home");
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ["about", "portfolio", "blog"];
+      const sections = ["home", "about", "portfolio", "blog"];
       const scrollPosition = window.scrollY;
 
       sections.forEach((section) => {
@@ -37,7 +37,7 @@ const Navbar = () => {
 
         {/* Navigation Links */}
         <div className="flex gap-8 text-lg">
-          {["about", "portfolio", "blog"].map((section) => (
+          {["home", "about", "portfolio", "blog"].map((section) => (
             <a
               key={section}
               href={`#${section}`}

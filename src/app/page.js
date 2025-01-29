@@ -1,6 +1,6 @@
 import Navbar from "./Components/NavBar";
+import Hero from "./Pages/Hero";
 import About from "./Components/About";
-import Projects from "./Components/Projects";
 import Portfolio from "./Pages/Portfolio";
 
 export default function Home() {
@@ -8,19 +8,9 @@ export default function Home() {
     <>
       <Navbar />
       <main>
-        {/* About Section */}
-        <section id="about">
-          <About />
-        </section>
-        <section id="portfolio">
-          <Portfolio />
-        </section>
-        {/* <section>
-          <Projects />
-        </section> */}
-        {/* <section id="blog" className="h-screen flex items-center justify-center bg-gray-400">
-          <h1>Blog</h1>
-        </section> */}
+        <Hero />
+        <About />
+        <Portfolio />
       </main>
     </>
   );

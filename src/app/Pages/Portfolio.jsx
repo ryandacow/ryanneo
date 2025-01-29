@@ -6,6 +6,7 @@ import { Code, Award, Briefcase } from "lucide-react";
 import ProjectCard from "../Components/ProjectCard";
 import TechStackIcon from "../Components/TechStackIcon";
 import { projects } from "../Data/dataProjects"; 
+import { experiences } from "../Data/dataExperience";
 import { FaHtml5, FaCss3Alt, FaJs, FaReact, FaNodeJs } from "react-icons/fa";
 import { SiFirebase, SiTailwindcss, SiVercel } from "react-icons/si";
 
@@ -20,22 +21,7 @@ const techStacks = [
     { icon: <SiVercel size={40} className="text-black" />, language: "Vercel" },
   ];
 
-const experience = [
-  {
-    id: 1,
-    role: "Software Engineer Intern",
-    company: "TechCorp",
-    duration: "Jan 2023 - Present",
-    description: "Worked on full-stack development using React, Node.js, and Firebase.",
-  },
-  {
-    id: 2,
-    role: "Data Science Intern",
-    company: "Analytics Hub",
-    duration: "May 2022 - Dec 2022",
-    description: "Built machine learning models for customer analytics and automation.",
-  },
-];
+
 
 export default function PortfolioSection() {
   const [activeTab, setActiveTab] = useState("projects");
@@ -43,7 +29,7 @@ export default function PortfolioSection() {
   return (
     <section
       id="portfolio"
-      className="w-full bg-gray-50 dark:bg-gray-900 text-gray-800 dark:text-gray-200 py-20" // Adjusted height
+      className="min-h-[80vh] w-full bg-gray-50 dark:bg-gray-900 text-gray-800 dark:text-gray-200 py-20 pb-30" // Adjusted height
     >
       <div className="container mx-auto px-6">
         
@@ -69,7 +55,7 @@ export default function PortfolioSection() {
         >
           {[
             { id: "projects", icon: <Code className="w-5 h-5" />, label: "Projects" },
-            { id: "experience", icon: <Briefcase className="w-5 h-5" />, label: "Experience" },
+            { id: "experiences", icon: <Briefcase className="w-5 h-5" />, label: "Experiences" },
             { id: "skills", icon: <Award className="w-5 h-5" />, label: "Skills" },
           ].map(({ id, icon, label }) => (
             <button
@@ -107,14 +93,14 @@ export default function PortfolioSection() {
           )}
 
           {/* Experience Section */}
-          {activeTab === "experience" && (
+          {activeTab === "experiences" && (
             <motion.div
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, ease: "easeOut" }}
               className="grid grid-cols-1 md:grid-cols-2 gap-6"
             >
-              {experience.map((exp, index) => (
+              {experiences.map((exp, index) => (
                 <motion.div
                   key={exp.id || index}
                   initial={{ opacity: 0, y: 20 }}
