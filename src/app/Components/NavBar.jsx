@@ -7,7 +7,7 @@ const Navbar = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ["about", "experience", "skills", "projects", "blog"];
+      const sections = ["about", "portfolio", "blog"];
       const scrollPosition = window.scrollY;
 
       sections.forEach((section) => {
@@ -37,7 +37,7 @@ const Navbar = () => {
 
         {/* Navigation Links */}
         <div className="flex gap-8 text-lg">
-          {["about", "experience", "skills", "projects", "blog"].map((section) => (
+          {["about", "portfolio", "blog"].map((section) => (
             <a
               key={section}
               href={`#${section}`}
