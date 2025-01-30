@@ -1,106 +1,178 @@
 "use client";
-
 import React, { useState, useEffect } from "react";
-import { ChevronsLeftRight, Globe } from "lucide-react";
-import { projects } from "../Data/dataProjects"; // Import projects data
+import { ChevronsLeftRight, Globe, Target, Heart, Brain, Trophy } from "lucide-react";
+import { projects } from "../Data/dataProjects";
+import { motion } from "framer-motion";
 
 const About = () => {
   const [projectsCount, setProjectsCount] = useState(0);
 
   useEffect(() => {
-    let targetProjects = projects.length; // Get total projects count
-
+    let targetProjects = projects.length;
     let projectInterval = setInterval(() => {
       setProjectsCount((prev) => (prev < targetProjects ? prev + 1 : targetProjects));
     }, 100);
 
-
-    return () => {
-      clearInterval(projectInterval);
-    };
+    return () => clearInterval(projectInterval);
   }, []);
 
   return (
     <section
-  id="about"
-  className="min-h-[80vh] flex flex-col lg:flex-row items-center justify-center bg-gray-50 dark:bg-gray-900 text-gray-800 dark:text-gray-200 px-6 pt-30 pb-30"
->
-      <div className="w-full max-w-6xl grid grid-cols-1 lg:grid-cols-3 gap-6">
-        {/* Left: Profile Image, Resume, and Stats */}
-        <div className="flex flex-col items-center justify-start bg-gradient-to-br from-indigo-50 to-indigo-100 dark:from-indigo-900 dark:to-indigo-700 shadow-lg rounded-lg p-6 relative">
-          {/* Profile Image (Aligned Higher) */}
-          <div className="relative w-48 h-48 mt-5 mb-5">
+      id="about"
+      className="min-h-[80vh] flex flex-col lg:flex-row items-center justify-center bg-gray-50 dark:bg-gray-900 text-gray-800 dark:text-gray-200 px-6 py-16 lg:py-30 lg:pb-50 relative z-10"
+      style={{ scrollMarginTop: "6rem" }}
+    >
+      <div className="w-full max-w-6xl grid grid-cols-1 lg:grid-cols-3 gap-8">
+        {/* Left: Profile Section */}
+        <motion.div 
+          initial={{ opacity: 0, x: -30, }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: false, amount: 0.2 }}
+          transition={{ duration: 1.5 }}
+          className="flex flex-col items-center justify-start bg-gradient-to-br from-indigo-50/80 to-blue-50/80 dark:from-indigo-900/50 dark:to-blue-900/30 backdrop-blur-sm shadow-2xl rounded-2xl p-8 relative overflow-hidden"
+        >
+          {/* Decorative Elements */}
+          <div className="absolute -top-20 -right-20 w-40 h-40 bg-indigo-200/30 dark:bg-indigo-700/20 rounded-full blur-xl" />
+          
+          {/* Profile Image */}
+          <div className="relative w-52 h-52 mt-4 mb-6 group">
+            <div className="absolute inset-0 bg-gradient-to-br from-indigo-400 to-blue-300 dark:from-indigo-600 dark:to-blue-500 rounded-full transform group-hover:rotate-12 transition-transform duration-300" />
             <img
               src="/Profile2.png"
               alt="Profile"
-              className="w-full h-full rounded-full shadow-md object-cover border-4 border-neutral-100 dark:border-neutral-300 hover:scale-105 transition-transform duration-300"
+              className="relative w-full h-full rounded-full shadow-xl object-cover border-4 border-white/80 dark:border-gray-800/90 z-10 transform group-hover:scale-105 transition-transform duration-300"
             />
           </div>
 
           {/* Resume Download */}
-          <a
+          <motion.a
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
             href="/Resume.pdf"
             download
-            className="mt-6 px-6 py-3 bg-indigo-500 text-white rounded-lg shadow-md hover:bg-indigo-600 transition"
+            className="w-full px-8 py-3.5 bg-gradient-to-r from-indigo-500 to-blue-500 text-white font-semibold rounded-xl shadow-lg hover:shadow-indigo-500/30 transition-all text-center"
           >
-            Download my Resume
-          </a>
+            Download Resume
+          </motion.a>
 
-          {/* Buttons for Stats */}
-          <div className="mt-8 flex gap-4">
-            {/* Total Projects */}
-            <button className="flex items-center gap-2 px-4 py-2 bg-sky-100 dark:bg-sky-900 text-sky-700 dark:text-indigo-300 rounded-lg shadow-md hover:bg-sky-200 dark:hover:bg-sky-800 transition">
-              <ChevronsLeftRight className="w-8 h-8" />
-              <span>{projectsCount} Total Projects</span>
-            </button>
+          {/* Stats Cards */}
+          <div className="w-full mt-8 space-y-4">
+            <motion.div 
+              whileHover={{ y: -5 }}
+              className="flex items-center gap-4 p-4 bg-white/80 dark:bg-gray-800/90 backdrop-blur-sm rounded-xl shadow-md hover:shadow-lg transition-shadow"
+            >
+              <div className="p-3 bg-indigo-100 dark:bg-indigo-900/50 rounded-lg">
+                <ChevronsLeftRight className="w-8 h-8 text-indigo-600 dark:text-indigo-400" />
+              </div>
+              <div>
+                <p className="text-xl font-bold text-indigo-600 dark:text-indigo-400">{projectsCount}+</p>
+                <p className="text-gray-600 dark:text-gray-300">Projects</p>
+              </div>
+            </motion.div>
 
-            {/* Years of Experience */}
-            <button className="flex items-center gap-2 px-4 py-2 bg-green-100 dark:bg-green-900 text-green-700 dark:text-green-300 rounded-lg shadow-md hover:bg-green-200 dark:hover:bg-green-800 transition">
-              <Globe className="w-8 h-8" />
-              <span>1 Year of Experience</span>
-            </button>
+            <motion.div 
+              whileHover={{ y: -5 }}
+              className="flex items-center gap-4 p-4 bg-white/80 dark:bg-gray-800/90 backdrop-blur-sm rounded-xl shadow-md hover:shadow-lg transition-shadow"
+            >
+              <div className="p-3 bg-green-100 dark:bg-green-900/50 rounded-lg">
+                <Globe className="w-8 h-8 text-green-600 dark:text-green-400" />
+              </div>
+              <div>
+                <p className="text-xl font-bold text-green-600 dark:text-green-400">1+</p>
+                <p className="text-gray-600 dark:text-gray-300">Years Experience</p>
+              </div>
+            </motion.div>
           </div>
-        </div>
+        </motion.div>
 
-        {/* Right: Bento Grid Layout */}
-        <div className="col-span-2 grid grid-rows-2 gap-6">
-          {/* Main Grid: About Me */}
-          <div className="bg-white dark:bg-gray-800 shadow-lg rounded-lg p-6">
-            <h2 className="text-3xl font-bold mb-4">About Me</h2>
-            <p className="text-lg leading-relaxed">
-              Hi, I’m Ryan! An aspiring business analyst who indulges in problem-solving and loves exploring new things!
-              I'm also an avid athlete, playing Ultimate Frisbee and Football. Check out my blog for some highlights 🤭
-              Always eager to learn and meet new people! 😆
+        {/* Right: Content Section */}
+        <div className="col-span-2 grid grid-rows-2 gap-8">
+          {/* About Me Card */}
+          <motion.div
+            initial={{ opacity:0, y: -30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: false, amount: 0.2 }}
+            transition={{ duration: 1.5 }}
+            className="relative bg-white/80 dark:bg-gray-800/90 backdrop-blur-sm shadow-2xl rounded-2xl p-8 overflow-hidden"
+          >
+            <div className="absolute -top-20 -left-20 w-48 h-48 bg-blue-200/30 dark:bg-blue-700/20 rounded-full blur-xl" />
+            <h2 className="text-4xl font-bold mb-6 bg-gradient-to-r from-indigo-600 to-blue-500 bg-clip-text text-transparent">
+              About Me
+            </h2>
+            <p className="text-xl leading-relaxed text-gray-700 dark:text-gray-300">
+              Hi, I'm <span className="font-semibold text-indigo-600 dark:text-indigo-400">Ryan</span>! An aspiring business analyst passionate about solving complex problems and exploring innovative solutions. When I'm not analyzing data, you'll find me dominating the Ultimate Frisbee field or cheering on Manchester United ⚽
             </p>
-          </div>
+          </motion.div>
 
-          {/* Bento Grid: Goals & Interests */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {/* Goals */}
-            <div className="bg-indigo-100 dark:bg-indigo-900 shadow-lg rounded-lg p-6">
-              <h3 className="text-2xl font-semibold text-indigo-700 dark:text-indigo-300 mb-2">
-                Goals for 2025!
-              </h3>
-              <ul className="list-disc pl-5 text-gray-700 dark:text-gray-300">
-                <li>Finish my Portfolio Website</li>
-                <li>Learn 1 Machine Learning Model</li>
-                <li>Implement a practical Data Analysis System</li>
-                <li>First team for my Ultimate Club!</li>
+          {/* Goals & Interests Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {/* Goals Card */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: false, amount: 0.2 }}
+              transition={{ duration: 1.5 }}
+              whileHover={{ scale: 1.02 }}
+              className="bg-indigo-100/80 dark:bg-indigo-900/50 backdrop-blur-sm shadow-xl rounded-2xl p-8 relative overflow-hidden"
+            >
+              <div className="absolute -top-10 -right-10 w-32 h-32 bg-indigo-200/30 dark:bg-indigo-700/20 rounded-full blur-xl" />
+              <div className="flex items-center gap-4 mb-4">
+                <Target className="w-10 h-10 text-indigo-600 dark:text-indigo-400" />
+                <h3 className="text-2xl font-bold text-indigo-700 dark:text-indigo-300">2025 Goals</h3>
+              </div>
+              <ul className="space-y-3 pl-2 text-gray-700 dark:text-gray-300">
+                <li className="flex gap-3 items-center">
+                  <div className="w-2 h-2 bg-indigo-500 rounded-full" />
+                  Complete portfolio website
+                </li>
+                <li className="flex gap-3 items-center">
+                  <div className="w-2.5 h-2 bg-indigo-500 rounded-full" />
+                  Learn and implement one machine learning model
+                </li>
+                <li className="flex gap-3 items-center">
+                  <div className="w-2 h-2 bg-indigo-500 rounded-full" />
+                  Develop data analysis framework
+                </li>
+                <li className="flex gap-3 items-center">
+                  <div className="w-2 h-2 bg-indigo-500 rounded-full" />
+                  Break into my Ultimate club's 1st team
+                </li>
               </ul>
-            </div>
+            </motion.div>
 
-            {/* Interests */}
-            <div className="bg-green-100 dark:bg-green-900 shadow-lg rounded-lg p-6">
-              <h3 className="text-2xl font-semibold text-green-700 dark:text-green-300 mb-2">
-                Interests/Hobbies
-              </h3>
-              <ul className="list-disc pl-5 text-gray-700 dark:text-gray-300">
-                <li>Ultimate Frisbee</li>
-                <li>Manchester United</li>
-                <li>Artificial Intelligence</li>
-                <li>Old Money Fashion :o</li>
-              </ul>
-            </div>
+            {/* Interests Card */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: false, amount: 0.2 }}
+              transition={{ duration: 1.5 }}
+              whileHover={{ scale: 1.02 }}
+              className="bg-green-100/80 dark:bg-green-900/50 backdrop-blur-sm shadow-xl rounded-2xl p-8 relative overflow-hidden"
+            >
+              <div className="absolute -top-10 -left-10 w-32 h-32 bg-green-200/30 dark:bg-green-700/20 rounded-full blur-xl" />
+              <div className="flex items-center gap-4 mb-4">
+                <Heart className="w-10 h-10 text-green-600 dark:text-green-400" />
+                <h3 className="text-2xl font-bold text-green-700 dark:text-green-300">Passions</h3>
+              </div>
+              <div className="grid grid-cols-2 gap-4">
+                <div className="flex items-center gap-3 p-3 bg-white/50 dark:bg-gray-800/30 rounded-lg">
+                  <Trophy className="w-6 h-6 text-green-600" />
+                  <span>Sports</span>
+                </div>
+                <div className="flex items-center gap-3 p-3 bg-white/50 dark:bg-gray-800/30 rounded-lg">
+                  <Brain className="w-6 h-6 text-green-600" />
+                  <span>AI Tech</span>
+                </div>
+                <div className="flex items-center gap-3 p-3 bg-white/50 dark:bg-gray-800/30 rounded-lg">
+                  <Globe className="w-6 h-6 text-green-600" />
+                  <span>Travel</span>
+                </div>
+                <div className="flex items-center gap-3 p-3 bg-white/50 dark:bg-gray-800/30 rounded-lg">
+                  <span>👔</span>
+                  <span>Fashion</span>
+                </div>
+              </div>
+            </motion.div>
           </div>
         </div>
       </div>

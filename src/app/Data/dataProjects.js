@@ -35,6 +35,6 @@ export const projects = [
     source: "https://github.com/ryandacow/ryanneo",
     live: "https://project-three.example.com",
     color: { bg: "bg-red-100", text: "text-red-800" },
-    scale: "h-80, w-75",
+    scale: "h-80, w-80",
   }
 ];

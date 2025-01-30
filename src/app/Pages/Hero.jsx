@@ -1,7 +1,7 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
-import { motion } from "framer-motion";
+import React, { useState, useEffect , useRef} from "react";
+import { useScroll, useTransform, motion, useSpring } from "framer-motion";
 import { FaLinkedin, FaGithub, FaTelegram, FaEnvelope } from "react-icons/fa";
 
 // Typewriter effect roles
@@ -11,6 +11,21 @@ const erasingSpeed = 50;
 const pauseDuration = 1000;
 
 const Hero = () => {
+  const ref = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start start", "end start"]
+  });
+
+  const smoothScroll = useSpring(scrollYProgress, {
+    stiffness: 300,
+    damping: 40
+  });
+
+  const yText = useTransform(smoothScroll, [0, 1], [0, -200]);
+  const scaleLogo = useTransform(smoothScroll, [0, 1], [1, 0.8]);
+  const opacityOverlay = useTransform(smoothScroll, [0, 0.5], [1, 0]);
+
   const [currentText, setCurrentText] = useState("");
   const [roleIndex, setRoleIndex] = useState(0);
   const [charIndex, setCharIndex] = useState(0);
@@ -38,11 +53,12 @@ const Hero = () => {
   }, [charIndex, isDeleting, roleIndex]);
 
   return (
-    <section 
-      id="home"
-      className="flex flex-col lg:flex-row items-center justify-center bg-gray-50 dark:bg-gray-900 px-32 pt-[10rem] pb-6 lg:px-24 lg:pb-30"
-      style = {{ scrollMarginTop: "6rem" }}
-    >
+    // In your Hero section component:
+<section 
+  id="home"
+  className="flex flex-col lg:flex-row items-center justify-center bg-gray-50 dark:bg-gray-900 px-6 lg:px-24 pt-24 pb-24 min-h-screen" // Changed padding and added min-h-screen
+  style={{ scrollMarginTop: "6rem" }}
+>
       {/* Text Content */}
       <div className="lg:w-1/2 lg:pr-12 ml-25 text-center lg:text-left">
         <motion.div

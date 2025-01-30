@@ -1,16 +1,15 @@
 export const experiences = [
     {
       id: 1,
-      role: "Software Engineer Intern",
-      company: "TechCorp",
-      duration: "Jan 2023 - Present",
-      description: "Worked on full-stack development using React, Node.js, and Firebase.",
+      role: "Platoon Commander",
+      company: "Singapore Armed Forces",
+      duration: "June 2024 - Present",
+      description: "Leadership opportunities whilst also utilising technical skills to build data analysis frameworks for fault management.",
+      image: "/SAF.png",
+      // blog: "https://techcorp.com/blog/frontend-experience", Blog link
     },
     {
       id: 2,
-      role: "Data Science Intern",
-      company: "Analytics Hub",
-      duration: "May 2022 - Dec 2022",
-      description: "Built machine learning models for customer analytics and automation.",
+      placeholder: ""
     },
   ];
