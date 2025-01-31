@@ -65,21 +65,20 @@ It features a modern, minimalist design with smooth animations, a typewriter eff
 
 ---
 
-### 🎨 **UI Preview**
+## 🎨 **UI Preview**
 ```md
-## 🎨 UI Preview
 🚀 **Minimalist Design with Smooth Animations**  
 ![Preview GIF](https://ryanneo.vercel.app/) <!-- Replace with an actual preview GIF if needed -->
 
 ---
 
-### 🙏 Credits & Inspiration
+## 🙏 Credits & Inspiration
 - Inspired by **[Jordan Gilroy](https://www.jordangilroy.com/)** & **[Eki](https://www.eki.my.id/#Portofolio)**
 - Built with ❤️ by **RyanNeo**
 
 ---
 
-### 🔗 Connect with Me
+## 🔗 Connect with Me
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=flat-square&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/ryanneojh/)  
 [![GitHub](https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/ryandacow)  
 [![Telegram](https://img.shields.io/badge/Telegram-26A5E4?style=flat-square&logo=telegram&logoColor=white)](https://t.me/RyanDaCow)  
