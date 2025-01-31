@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import BlogCard from "../components/BlogCard";
+import BlogCard from "../Components/BlogCard";
 import Link from "next/link";
 
 const Blog = () => {
