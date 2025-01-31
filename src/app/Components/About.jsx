@@ -1,7 +1,7 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import { ChevronsLeftRight, Globe, Target, Heart, Brain, Trophy } from "lucide-react";
-import { projects } from "../Data/dataProjects";
+import { projects } from "../../Data/dataProjects";
 import { motion } from "framer-motion";
 
 const About = () => {
@@ -100,7 +100,10 @@ const About = () => {
               About Me
             </h2>
             <p className="text-xl leading-relaxed text-gray-700 dark:text-gray-300">
-              Hi, I'm <span className="font-semibold text-indigo-600 dark:text-indigo-400">Ryan</span>! An aspiring business analyst passionate about solving complex problems and exploring innovative solutions. When I'm not analyzing data, you'll find me dominating the Ultimate Frisbee field or cheering on Manchester United ⚽
+              Hi, I'm <span className="font-semibold text-indigo-600 dark:text-indigo-400">Ryan</span>! 
+              An aspiring Business Analyst who indulges in problem solving and loves exploring new things!
+              I'm also an avid athlete, playing Ultimate Frisbee and Football. Check out my blog for some highlights of mine 🤭
+              Feel free to connect via my socials! Always excited to meet new people 😆
             </p>
           </motion.div>
 

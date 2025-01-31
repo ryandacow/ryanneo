@@ -6,8 +6,8 @@ import { Code, Award, Briefcase } from "lucide-react";
 import ProjectCard from "../Components/ProjectCard";
 import ExperienceCard from "../Components/ExperienceCard";
 import TechStackIcon from "../Components/TechStackIcon";
-import { projects } from "../Data/dataProjects"; 
-import { experiences } from "../Data/dataExperience";
+import { projects } from "../../Data/dataProjects"; 
+import { experiences } from "../../Data/dataExperience";
 import { FaHtml5, FaCss3Alt, FaJs, FaReact, FaNodeJs, FaPython } from "react-icons/fa";
 import { SiFirebase, SiTailwindcss, SiVercel , SiFlask , SiSupabase, SiRender} from "react-icons/si";
 
