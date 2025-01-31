@@ -66,7 +66,6 @@ It features a modern, minimalist design with smooth animations, a typewriter eff
 ---
 
 ## 🎨 **UI Preview**
-```sh
 🚀 **Minimalist Design with Smooth Animations**  
 ![Preview GIF](https://ryanneo.vercel.app/) <!-- Replace with an actual preview GIF if needed -->
 
