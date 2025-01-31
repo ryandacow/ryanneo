@@ -6,7 +6,7 @@ const BlogCard = ({ post }) => {
       <h2 className="text-xl font-bold">{post.title}</h2>
       <p className="text-gray-500 text-sm mb-4">{post.date}</p>
       <p className="text-gray-700 dark:text-gray-300">{post.excerpt}</p>
-      <Link href={`/blog/${post.slug}`} className="text-indigo-500 hover:underline mt-4 inline-block">
+      <Link href={`/blog/${post.blogID}`} className="text-indigo-500 hover:underline mt-4 inline-block">
         Read More →
       </Link>
     </div>

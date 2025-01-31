@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect , useRef} from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { useScroll, useTransform, motion, useSpring } from "framer-motion";
 import { FaLinkedin, FaGithub, FaTelegram, FaEnvelope } from "react-icons/fa";
 
@@ -53,32 +53,31 @@ const Hero = () => {
   }, [charIndex, isDeleting, roleIndex]);
 
   return (
-    // In your Hero section component:
-<section 
-  id="home"
-  className="flex flex-col lg:flex-row items-center justify-center bg-gray-50 dark:bg-gray-900 px-6 lg:px-24 pt-24 pb-24 min-h-screen" // Changed padding and added min-h-screen
-  style={{ scrollMarginTop: "6rem" }}
->
+    <section
+      id="home"
+      className="flex flex-col lg:flex-row items-center justify-center bg-gray-50 dark:bg-gray-900 px-6 lg:px-24 pt-24 pb-24 min-h-screen max-w-[2000px] mx-auto"
+      style={{ scrollMarginTop: "6rem" }}
+    >
       {/* Text Content */}
-      <div className="lg:w-1/2 lg:pr-12 ml-25 text-center lg:text-left">
+      <div className="lg:w-1/2 text-center lg:text-left px-4 md:px-8 lg:px-12">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <h1 className="text-3xl md:text-4xl font-semibold mb-2 text-gray-800 dark:text-gray-200">
+          <h1 className="text-3xl md:text-5xl lg:text-6xl font-semibold mb-2 text-gray-800 dark:text-gray-200">
             Hi there 👋 I am
           </h1>
-          <h1 className="text-5xl md:text-6xl font-extrabold text-indigo-600 dark:text-indigo-400">
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold text-indigo-600 dark:text-indigo-400">
             Ryan Neo
           </h1>
 
           {/* Typewriter Effect */}
-          <p className="text-xl md:text-2xl mt-4 mb-6 text-indigo-500 font-semibold">
+          <p className="text-lg md:text-2xl lg:text-3xl mt-4 mb-6 text-indigo-500 font-semibold">
             Aspiring <span className="text-indigo-700 dark:text-indigo-300">{currentText}</span><span className="text-indigo-500">|</span>
           </p>
 
-          <p className="text-lg md:text-xl mb-8 text-gray-600 dark:text-gray-400 max-w-2xl">
+          <p className="text-md md:text-lg lg:text-xl mb-8 text-gray-600 dark:text-gray-400 max-w-2xl">
             Undergraduate at NUS, eager to learn and contribute!
           </p>
 
@@ -87,7 +86,7 @@ const Hero = () => {
             href="#portfolio"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="inline-block bg-indigo-500 text-white px-8 py-3 rounded-lg text-lg font-semibold shadow-lg hover:shadow-indigo-500/50 transition-all animate-glow"
+            className="inline-block bg-indigo-500 text-white px-6 md:px-8 py-3 md:py-4 rounded-lg text-lg font-semibold shadow-lg hover:shadow-indigo-500/50 transition-all animate-glow"
           >
             View My Work
           </motion.a>
@@ -119,8 +118,8 @@ const Hero = () => {
       </div>
 
       {/* Image Container */}
-      <div className="lg:w-1/2 flex justify-center">
-        <div className="relative w-64 lg:w-96 h-[550px]">
+      <div className="lg:w-1/2 flex justify-center px-4 md:px-8">
+        <div className="relative w-48 md:w-64 lg:w-96 h-[450px] md:h-[550px]">
           {/* Gradient Rectangle */}
           <div className="absolute bottom-0 w-full h-6/7 bg-gradient-to-b from-blue-300 to-indigo-500 dark:from-indigo-900/20 dark:to-blue-900/30 rounded-lg shadow-xl border border-blue-300 dark:border-indigo-500" />
           
@@ -149,7 +148,7 @@ const SocialIcon = ({ href, icon, color }) => (
     target="_blank"
     rel="noopener noreferrer"
     whileHover={{ y: -3 }}
-    className={`${color} text-white w-12 h-12 rounded-lg flex items-center justify-center text-2xl shadow-md hover:shadow-lg transition-shadow animate-glow`}
+    className={`${color} text-white w-10 h-10 md:w-12 md:h-12 rounded-lg flex items-center justify-center text-2xl shadow-md hover:shadow-lg transition-shadow animate-glow`}
   >
     {icon}
   </motion.a>
