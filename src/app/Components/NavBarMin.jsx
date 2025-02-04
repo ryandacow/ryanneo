@@ -5,7 +5,7 @@ import Link from "next/link";
 
 const Navbar = () => {
   return (
-    <nav className="fixed top-6 left-6 z-50">
+    <nav className="fixed top-6 right-6 z-50">
       <div className="flex flex-col gap-4 text-lg">
         <Link href="/" className="text-gray-400 hover:text-[#4B0082] transition">
         Home

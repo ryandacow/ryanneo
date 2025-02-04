@@ -45,11 +45,24 @@ const Navbar = () => {
     { id: "home", label: "Home", href: "#home" },
     { id: "about", label: "About", href: "#about" },
     { id: "portfolio", label: "Portfolio", href: "#portfolio" },
-    { id: "blog", label: "Blog", href: "/blog" },
+    { id: "blog", label: "Blog", href: "/blog" }, // External link
   ];
 
+  // Scroll handling function
+  const handleScroll = (id) => {
+    const element = document.getElementById(id);
+    if (element) {
+      const offset = 24; // Adjust for navbar height
+      const elementPosition = element.getBoundingClientRect().top + window.scrollY;
+      window.scrollTo({
+        top: elementPosition - offset, // Scroll to section position minus navbar height
+        behavior: "smooth", // Enable smooth scrolling
+      });
+    }
+  };
+
   return (
-    <nav className="fixed top-0 left-0 w-full">
+    <nav className="fixed top-0 left-0 w-full z-100 bg-[#f5e4d7]">
       <div className="container mx-auto px-4 py-4 h-20 relative flex items-center">
         {/* Brand (Left) */}
         <div className="absolute left-0">
@@ -63,6 +76,10 @@ const Navbar = () => {
               <a
                 key={link.id}
                 href={link.href}
+                onClick={(e) => {
+                  e.preventDefault(); // Prevent default anchor behavior
+                  handleScroll(link.id); // Trigger the smooth scroll for internal links
+                }}
                 className={`px-3 py-2 rounded-md transition-colors hover:bg-gray-300 ${
                   activeSection === link.id
                     ? "text-blue-600 font-bold"
@@ -72,6 +89,7 @@ const Navbar = () => {
                 {link.label}
               </a>
             ) : (
+              // For external links, use Link component without handleScroll
               <Link
                 key={link.id}
                 href={link.href}
@@ -114,7 +132,11 @@ const Navbar = () => {
                 <a
                   key={link.id}
                   href={link.href}
-                  onClick={() => setIsMobileMenuOpen(false)}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleScroll(link.id);
+                    setIsMobileMenuOpen(false);
+                  }}
                   className={`block px-3 py-2 rounded-md transition-colors hover:bg-gray-300 ${
                     activeSection === link.id
                       ? "text-blue-600 font-bold"
@@ -127,7 +149,10 @@ const Navbar = () => {
                 <Link
                   key={link.id}
                   href={link.href}
-                  onClick={() => setIsMobileMenuOpen(false)}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    setIsMobileMenuOpen(false); // Close the menu when an external link is clicked
+                  }}
                   className={`block px-3 py-2 rounded-md transition-colors hover:bg-gray-300 ${
                     activeSection === link.id
                       ? "text-blue-600 font-bold"

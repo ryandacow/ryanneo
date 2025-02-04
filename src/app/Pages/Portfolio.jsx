@@ -69,7 +69,7 @@ export default function PortfolioSection() {
               className={`flex items-center px-6 py-3 rounded-lg transition-all duration-300 text-sm font-medium ${
                 activeTab === id
                   ? "bg-indigo-500 text-white shadow-lg"
-                  : "bg-white/10 hover:bg-white/20 text-gray-300"
+                  : "bg-indigo-200 hover:bg-indigo-300 text-indigo-600"
               }`}
             >
               {icon}

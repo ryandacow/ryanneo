@@ -30,50 +30,56 @@ const BlogList = () => {
 
   return (
     <>
-    <Navbarmin />
+      <Navbarmin predefinedTags={predefinedTags} setSelectedTag={setSelectedTag} />
 
-    <section id="blog" className="min-h-screen px-6 py-16 container mx-auto">
-      <h1 className="text-4xl font-bold text-center mb-12 gradient-text underline-animation">
-        daCow Blogs 🐮
-      </h1>
+      <section
+        id="blog"
+        className="min-h-screen py-16 w-full" // Set width to full to prevent margins
+        style={{ backgroundColor: "#f5e4d7" }} // Set consistent background color
+      >
+        <div className="container mx-auto px-6 sm:px-8 lg:px-16">
+          <h1 className="text-4xl font-bold text-center mb-12 gradient-text underline-animation">
+            daCow Blogs 🐮
+          </h1>
 
-      {/* TAG FILTER */}
-      <div className="flex justify-center gap-4 mb-8 flex-wrap">
-        {predefinedTags.map((tag) => (
-          <button
-            key={tag}
-            onClick={() => setSelectedTag(tag)}
-            className={`px-4 py-2 rounded-md transition ${
-              selectedTag === tag
-                ? "bg-violet-400 text-white"
-                : "bg-gray-200 dark:bg-gray-700"
-            }`}
-          >
-            {tag}
-          </button>
-        ))}
-      </div>
+          {/* TAG FILTER */}
+          <div className="flex justify-center gap-4 mb-8 flex-wrap">
+            {predefinedTags.map((tag) => (
+              <button
+                key={tag}
+                onClick={() => setSelectedTag(tag)}
+                className={`px-4 py-2 rounded-md transition ${
+                  selectedTag === tag
+                    ? "bg-violet-400 text-white"
+                    : "bg-gray-200 dark:bg-gray-700"
+                }`}
+              >
+                {tag}
+              </button>
+            ))}
+          </div>
 
-      {/* BLOG POSTS */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {filteredPosts.length > 0 ? (
-          filteredPosts.map((post, index) => (
-            <motion.div
-              key={post.blogID}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-            >
-              <BlogCard post={post} />
-            </motion.div>
-          ))
-        ) : (
-          <p className="text-center text-gray-500 col-span-full">
-            No blogs found for "{selectedTag}".
-          </p>
-        )}
-      </div>
-    </section>
+          {/* BLOG POSTS */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+            {filteredPosts.length > 0 ? (
+              filteredPosts.map((post, index) => (
+                <motion.div
+                  key={post.blogID}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                >
+                  <BlogCard post={post} />
+                </motion.div>
+              ))
+            ) : (
+              <p className="text-center text-gray-500 col-span-full">
+                No blogs found for "{selectedTag}".
+              </p>
+            )}
+          </div>
+        </div>
+      </section>
     </>
   );
 };

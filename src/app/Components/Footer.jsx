@@ -5,7 +5,7 @@ import { FaLinkedin, FaGithub, FaTelegram, FaEnvelope } from "react-icons/fa";
 
 const Footer = () => {
   return (
-    <footer className="w-full py-6 px-6 md:px-12 border-t border-gray-300 dark:border-gray-700">
+    <footer className="w-full py-6 px-6 md:px-12 bg-[#f5e4d7]">
       <div className="max-w-[1440px] mx-auto flex flex-col md:flex-row items-center justify-between text-gray-600 dark:text-gray-400 text-sm">
         
         {/* Left Side - Copyright */}

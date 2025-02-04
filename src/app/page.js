@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import WelcomePage from "./Pages/Welcome";
 import WelcomePage2 from "./Pages/Welcome2";
 import Navbar from "./Components/NavBar";
 import Hero from "./Pages/Hero";
@@ -11,26 +10,30 @@ import Footer from "./Components/Footer";
 
 export default function Home() {
   const [showWelcome, setShowWelcome] = useState(true);
+  const [isClient, setIsClient] = useState(false); // Ensure client-side rendering
 
   useEffect(() => {
-    const lastVisit = localStorage.getItem("lastWelcomeTimestamp");
+    setIsClient(true); // Ensures this runs only in the browser
 
-    if (lastVisit) {
+    if (typeof window !== "undefined") {
+      const lastVisit = localStorage.getItem("lastWelcomeTimestamp");
       const now = new Date().getTime();
       const twentyFourHours = 24 * 60 * 60 * 1000; // 24 hours in milliseconds
 
-      // If last visit was less than 24 hours ago, skip welcome page
-      if (now - parseInt(lastVisit) < twentyFourHours) {
-        setShowWelcome(true);
+      if (lastVisit && now - parseInt(lastVisit) < twentyFourHours) {
+        setShowWelcome(false); // Skip welcome screen if within 24 hours
       }
     }
   }, []);
 
   const handleWelcomeComplete = () => {
     setShowWelcome(false);
-    const now = new Date().getTime();
-    localStorage.setItem("lastWelcomeTimestamp", now.toString()); // Save timestamp
+    if (typeof window !== "undefined") {
+      localStorage.setItem("lastWelcomeTimestamp", new Date().getTime().toString());
+    }
   };
+
+  if (!isClient) return null; // Prevents Next.js from rendering on server
 
   return (
     <>
@@ -39,12 +42,12 @@ export default function Home() {
       ) : (
         <>
           <Navbar />
-          <main style={{ backgroundColor: "#e5d5cb" }}>
+          <main style={{ backgroundColor: "#f5e4d7" }}>
             <Hero />
             <About />
             <Portfolio />
           </main>
-          <Footer /> {/* ✅ Add Footer at the bottom */}
+          <Footer />
         </>
       )}
     </>
