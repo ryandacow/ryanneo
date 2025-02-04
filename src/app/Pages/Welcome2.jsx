@@ -32,15 +32,15 @@ const Navbar = () => {
     return () => sections.forEach((section) => observer.unobserve(section));
   }, []);
 
-  // Format time and date
+  // Format time as "12:03PM" and date as "4 February 2025"
   const timeOptions = { hour: "numeric", minute: "numeric", hour12: true };
   let formattedTime = currentTime
     .toLocaleTimeString("en-US", timeOptions)
-    .replace(" ", ""); // Remove extra space before AM/PM
+    .replace(" ", ""); // remove extra space before AM/PM
   const dateOptions = { day: "numeric", month: "long", year: "numeric" };
   const formattedDate = currentTime.toLocaleDateString("en-GB", dateOptions);
 
-  // Define nav links
+  // Define your nav links
   const navLinks = [
     { id: "home", label: "Home", href: "#home" },
     { id: "about", label: "About", href: "#about" },
@@ -49,21 +49,21 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="fixed top-0 left-0 w-full">
-      <div className="container mx-auto px-4 py-4 h-20 relative flex items-center">
+    <nav className="fixed top-0 left-0 w-full bg-[#e5d5cb] z-50 shadow-md">
+      <div className="container mx-auto px-4 py-4 relative flex items-center">
         {/* Brand (Left) */}
         <div className="absolute left-0">
           <div className="text-2xl font-bold text-gray-800">RyanNeo</div>
         </div>
 
-        {/* Centered Nav Links */}
-        <div className="absolute left-1/2 transform -translate-x-1/2 hidden md:flex gap-8 text-lg">
+        {/* Center: Navigation Links */}
+        <div className="mx-auto hidden md:flex gap-8 text-lg">
           {navLinks.map((link) =>
             link.href.startsWith("#") ? (
               <a
                 key={link.id}
                 href={link.href}
-                className={`px-3 py-2 rounded-md transition-colors hover:bg-gray-300 ${
+                className={`px-3 py-2 rounded-md transition-colors hover:bg-gray-200 ${
                   activeSection === link.id
                     ? "text-blue-600 font-bold"
                     : "text-gray-800"
@@ -75,7 +75,7 @@ const Navbar = () => {
               <Link
                 key={link.id}
                 href={link.href}
-                className={`px-3 py-2 rounded-md transition-colors hover:bg-gray-300 ${
+                className={`px-3 py-2 rounded-md transition-colors hover:bg-gray-200 ${
                   activeSection === link.id
                     ? "text-blue-600 font-bold"
                     : "text-gray-800"
@@ -107,7 +107,7 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
-        <div className="md:hidden bg-[#e5d5cb] shadow-md ">
+        <div className="md:hidden bg-[#e5d5cb] shadow-md">
           <div className="container mx-auto px-4 py-4 flex flex-col gap-2">
             {navLinks.map((link) =>
               link.href.startsWith("#") ? (
@@ -115,7 +115,7 @@ const Navbar = () => {
                   key={link.id}
                   href={link.href}
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className={`block px-3 py-2 rounded-md transition-colors hover:bg-gray-300 ${
+                  className={`block px-3 py-2 rounded-md transition-colors hover:bg-gray-200 ${
                     activeSection === link.id
                       ? "text-blue-600 font-bold"
                       : "text-gray-800"
@@ -128,7 +128,7 @@ const Navbar = () => {
                   key={link.id}
                   href={link.href}
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className={`block px-3 py-2 rounded-md transition-colors hover:bg-gray-300 ${
+                  className={`block px-3 py-2 rounded-md transition-colors hover:bg-gray-200 ${
                     activeSection === link.id
                       ? "text-blue-600 font-bold"
                       : "text-gray-800"

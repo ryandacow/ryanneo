@@ -55,8 +55,8 @@ const Hero = () => {
   return (
     <section
       id="home"
-      className="flex flex-col lg:flex-row items-center justify-center bg-gray-50 dark:bg-gray-900 px-6 lg:px-24 pt-24 pb-24 min-h-screen max-w-[2000px] mx-auto"
-      style={{ scrollMarginTop: "6rem" }}
+      className="flex flex-col lg:flex-row items-center justify-center px-6 lg:px-24 pt-24 pb-24 min-h-screen max-w-[2000px] mx-auto"
+      style={{ scrollMarginTop: "6rem", background: "transparent" }} // ensures transparency
     >
       {/* Text Content */}
       <div className="lg:w-1/2 text-center lg:text-left px-4 md:px-8 lg:px-12">

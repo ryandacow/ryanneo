@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import WelcomePage from "./Pages/Welcome";
+import WelcomePage2 from "./Pages/Welcome2";
 import Navbar from "./Components/NavBar";
 import Hero from "./Pages/Hero";
 import About from "./Components/About";
@@ -20,7 +21,7 @@ export default function Home() {
 
       // If last visit was less than 24 hours ago, skip welcome page
       if (now - parseInt(lastVisit) < twentyFourHours) {
-        setShowWelcome(false);
+        setShowWelcome(true);
       }
     }
   }, []);
@@ -34,11 +35,11 @@ export default function Home() {
   return (
     <>
       {showWelcome ? (
-        <WelcomePage onComplete={handleWelcomeComplete} />
+        <WelcomePage2 onComplete={handleWelcomeComplete} />
       ) : (
         <>
           <Navbar />
-          <main>
+          <main style={{ backgroundColor: "#e5d5cb" }}>
             <Hero />
             <About />
             <Portfolio />

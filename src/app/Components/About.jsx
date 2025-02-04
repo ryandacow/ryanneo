@@ -19,7 +19,7 @@ const About = () => {
   return (
     <section
       id="about"
-      className="min-h-[80vh] flex flex-col lg:flex-row items-center justify-center bg-gray-50 dark:bg-gray-900 text-gray-800 dark:text-gray-200 px-6 py-16 lg:py-30 lg:pb-50 relative z-10"
+      className="min-h-[80vh] flex flex-col lg:flex-row items-center justify-center text-gray-800 dark:text-gray-200 px-6 py-16 lg:py-30 lg:pb-50 relative z-10"
       style={{ scrollMarginTop: "6rem" }}
     >
       <div className="w-full max-w-6xl grid grid-cols-1 lg:grid-cols-3 gap-8">
