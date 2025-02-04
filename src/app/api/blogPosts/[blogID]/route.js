@@ -17,6 +17,6 @@ export async function GET(req, { params }) {
   return NextResponse.json({
     title: data.title || "Untitled Post",
     date: data.date || "No date",
-    content,
+    content, // ✅ Removed `.trim()`
   });
 }

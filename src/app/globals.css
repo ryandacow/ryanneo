@@ -117,3 +117,10 @@ section {
   background-color: #333; /* or any color you prefer */
   transition: all 0.3s ease-out;
 }
+
+.prose {
+  line-height: 1.8;
+  font-size: 1.125rem;
+  max-width: 800px;
+  margin: 0 auto;
+}

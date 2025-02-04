@@ -5,6 +5,13 @@ summary: "Welcome to daCow's blog!"
 tags: "Life"
 ---
 
-Work in Progress!
+# **Building my Portfolio Website**  
+<br>
 
-Stay tuned for more! 🚀
+I made this website for the purpose of learning HTML and CSS frameworks like:  
+* React  
+* TailwindCSS  
+* GSAP 
+<br> 
+
+It was so I could have the flexibility to try out different styles and frameworks without the pressure of time constraints that hackathons would have.

@@ -32,7 +32,7 @@ export default function PortfolioSection() {
   return (
     <section
       id="portfolio"
-      className="min-h-screen w-full text-gray-800 dark:text-gray-200 py-20 pb-30 pt-24" // Adjusted height
+      className="min-h-screen w-full text-gray-800 dark:text-gray-200 pt-24" // Adjusted height
     >
       <div className="container mx-auto px-6">
         

@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import BlogCard from "../Components/BlogCard";
-import Navbarmin from "../Components/NavBarMin";
+import NavbarMin from "../Components/NavBarMin";
 
 const BlogList = () => {
   const [posts, setPosts] = useState([]);
@@ -30,35 +30,18 @@ const BlogList = () => {
 
   return (
     <>
-      <Navbarmin predefinedTags={predefinedTags} setSelectedTag={setSelectedTag} />
+      <NavbarMin
+        predefinedTags={predefinedTags}
+        selectedTag={selectedTag}
+        setSelectedTag={setSelectedTag}
+      />
 
       <section
         id="blog"
-        className="min-h-screen py-16 w-full" // Set width to full to prevent margins
+        className="min-h-screen py-16 w-full"
         style={{ backgroundColor: "#f5e4d7" }} // Set consistent background color
       >
-        <div className="container mx-auto px-6 sm:px-8 lg:px-16">
-          <h1 className="text-4xl font-bold text-center mb-12 gradient-text underline-animation">
-            daCow Blogs 🐮
-          </h1>
-
-          {/* TAG FILTER */}
-          <div className="flex justify-center gap-4 mb-8 flex-wrap">
-            {predefinedTags.map((tag) => (
-              <button
-                key={tag}
-                onClick={() => setSelectedTag(tag)}
-                className={`px-4 py-2 rounded-md transition ${
-                  selectedTag === tag
-                    ? "bg-violet-400 text-white"
-                    : "bg-gray-200 dark:bg-gray-700"
-                }`}
-              >
-                {tag}
-              </button>
-            ))}
-          </div>
-
+        <div className="container mx-auto px-6 pt-24 sm:px-8 lg:px-16">
           {/* BLOG POSTS */}
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
             {filteredPosts.length > 0 ? (
