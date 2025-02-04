@@ -3,7 +3,12 @@ import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
 
-export async function GET(req, { params }) {
+export async function GET(req, context) {
+  const { params } = context;  // ✅ Await params before accessing properties
+  if (!params || !params.blogID) {
+    return NextResponse.json({ error: "Invalid request" }, { status: 400 });
+  }
+
   const { blogID } = params;
   const filePath = path.join(process.cwd(), "src/Data/blogPosts", `${blogID}.md`);
 
@@ -17,6 +22,6 @@ export async function GET(req, { params }) {
   return NextResponse.json({
     title: data.title || "Untitled Post",
     date: data.date || "No date",
-    content, // ✅ Removed `.trim()`
+    content: content.trim(),
   });
 }

@@ -62,7 +62,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="fixed top-0 left-0 w-full z-100 bg-[#f5e4d7]">
+    <nav className="fixed top-0 left-0 w-full z-100 bg-[#f5e4d7] justify-around">
       <div className="container mx-auto px-4 py-4 h-20 relative flex items-center">
         {/* Brand (Left) */}
         <div className="absolute left-0">

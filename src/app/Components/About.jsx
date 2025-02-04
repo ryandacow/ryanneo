@@ -1,8 +1,10 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import { ChevronsLeftRight, Globe, Target, Heart, Brain, Trophy } from "lucide-react";
+import { PiShirtFolded } from "react-icons/pi";
 import { projects } from "../../Data/dataProjects";
 import { motion } from "framer-motion";
+
 
 const About = () => {
   const [projectsCount, setProjectsCount] = useState(0);
@@ -64,7 +66,7 @@ const About = () => {
               <div className="p-3 bg-indigo-100 dark:bg-indigo-900/50 rounded-lg">
                 <ChevronsLeftRight className="w-8 h-8 text-indigo-600 dark:text-indigo-400" />
               </div>
-              <div>
+              <div className="text-center flex-1">
                 <p className="text-xl font-bold text-indigo-600 dark:text-indigo-400">{projectsCount}+</p>
                 <p className="text-gray-600 dark:text-gray-300">Projects</p>
               </div>
@@ -77,7 +79,7 @@ const About = () => {
               <div className="p-3 bg-green-100 dark:bg-green-900/50 rounded-lg">
                 <Globe className="w-8 h-8 text-green-600 dark:text-green-400" />
               </div>
-              <div>
+              <div className="text-center flex-1">
                 <p className="text-xl font-bold text-green-600 dark:text-green-400">1+</p>
                 <p className="text-gray-600 dark:text-gray-300">Years Experience</p>
               </div>
@@ -86,16 +88,16 @@ const About = () => {
         </motion.div>
 
         {/* Right: Content Section */}
-        <div className="col-span-2 grid grid-rows-2 gap-8">
+        <div className="col-span-2 grid grid-rows-2 gap-8 ">
           {/* About Me Card */}
           <motion.div
             initial={{ opacity:0, y: -30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: false, amount: 0.2 }}
             transition={{ duration: 1.5 }}
-            className="relative bg-white/80 dark:bg-gray-800/90 backdrop-blur-sm shadow-2xl rounded-2xl p-8 overflow-hidden"
+            className="relative bg-white/80 dark:bg-gray-800/90 backdrop-blur-sm shadow-2xl rounded-2xl p-8 overflow-hidden bg-gradient-to-br from-indigo-50/80 to-blue-50/80"
           >
-            <div className="absolute -top-20 -left-20 w-48 h-48 bg-blue-200/30 dark:bg-blue-700/20 rounded-full blur-xl" />
+            <div className="flex -top-20 -left-20  bg-blue-200/30 dark:bg-blue-700/20 rounded-full blur-xl" />
             <h2 className="text-4xl font-bold mb-6 bg-gradient-to-r from-indigo-600 to-blue-500 bg-clip-text text-transparent">
               About Me
             </h2>
@@ -124,19 +126,19 @@ const About = () => {
                 <h3 className="text-2xl font-bold text-indigo-700 dark:text-indigo-300">2025 Goals</h3>
               </div>
               <ul className="space-y-3 pl-2 text-gray-700 dark:text-gray-300">
-                <li className="flex gap-3 items-center">
+                <li className="flex gap-3 items-center text-left">
                   <div className="w-2 h-2 bg-indigo-500 rounded-full" />
                   Complete portfolio website
                 </li>
-                <li className="flex gap-3 items-center">
+                <li className="flex gap-3 items-center text-left">
                   <div className="w-2.5 h-2 bg-indigo-500 rounded-full" />
                   Learn and implement one machine learning model
                 </li>
-                <li className="flex gap-3 items-center">
+                <li className="flex gap-3 items-center text-left">
                   <div className="w-2 h-2 bg-indigo-500 rounded-full" />
                   Develop data analysis framework
                 </li>
-                <li className="flex gap-3 items-center">
+                <li className="flex gap-3 items-center text-left">
                   <div className="w-2 h-2 bg-indigo-500 rounded-full" />
                   Break into my Ultimate club's 1st team
                 </li>
@@ -171,7 +173,7 @@ const About = () => {
                   <span>Travel</span>
                 </div>
                 <div className="flex items-center gap-3 p-3 bg-white/50 dark:bg-gray-800/30 rounded-lg">
-                  <span>👔</span>
+                  <PiShirtFolded className="w-6 h-6 text-green-600" />
                   <span>Fashion</span>
                 </div>
               </div>

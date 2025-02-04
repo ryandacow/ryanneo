@@ -12,7 +12,7 @@ const Footer = () => {
         <p className="mb-4 md:mb-0">&copy; RyanNeo 2025</p>
 
         {/* Middle - Inspirations */}
-        <p className="text-center">
+        <p className="text-center mb-4 md:mb-0">
           Inspired by  
           <a href="https://www.jordangilroy.com/" target="_blank" rel="noopener noreferrer" className="text-indigo-500 hover:text-indigo-400 transition"> Jordan Gilroy </a>  
           &  
