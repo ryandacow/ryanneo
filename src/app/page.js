@@ -42,7 +42,8 @@ export default function Home() {
       ) : (
         <>
           <Navbar />
-          <main style={{ backgroundColor: "#f5e4d7" }}>
+          <main style={{ backgroundColor: "#f5e4d7" }}
+          className="w-full overflow-x-hidden">
             <Hero />
             <About />
             <Portfolio />

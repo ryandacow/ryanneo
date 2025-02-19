@@ -62,11 +62,11 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="fixed top-0 left-0 w-full z-100 bg-[#f5e4d7] justify-around">
+    <nav className="fixed top-0 left-0 w-full z-100 bg-[#f5e4d7]">
       <div className="container mx-auto px-4 py-4 h-20 relative flex items-center">
         {/* Brand (Left) */}
-        <div className="absolute left-0">
-          <div className="text-2xl font-bold text-gray-800">RyanNeo</div>
+        <div className="absolute left-0 items-start">
+          <div className="text-2xl md:pl-0 pl-6 font-bold text-gray-800">RyanNeo</div>
         </div>
 
         {/* Centered Nav Links */}
@@ -106,13 +106,13 @@ const Navbar = () => {
         </div>
 
         {/* Time/Date (Right) */}
-        <div className="absolute right-0 hidden md:flex flex-col items-end">
+        <div className="absolute right-0 pr-4 hidden md:flex flex-col items-end">
           <div className="text-lg text-gray-800">{formattedTime} [SGT]</div>
           <div className="text-sm text-gray-800">{formattedDate}</div>
         </div>
 
         {/* Mobile Menu Button */}
-        <div className="absolute right-0 md:hidden">
+        <div className="absolute right-0 md:pr-0 pr-6 md:hidden justify-around">
           <button onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
             {isMobileMenuOpen ? (
               <HiOutlineX className="w-8 h-8 text-gray-800" />
@@ -125,7 +125,7 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
-        <div className="md:hidden bg-[#e5d5cb] shadow-md ">
+        <div className="md:hidden bg-[#e5d5cb] shadow-md">
           <div className="container mx-auto px-4 py-4 flex flex-col gap-2">
             {navLinks.map((link) =>
               link.href.startsWith("#") ? (
@@ -146,25 +146,28 @@ const Navbar = () => {
                   {link.label}
                 </a>
               ) : (
-                <Link
-                  key={link.id}
-                  href={link.href}
-                  onClick={(e) => {
-                    e.preventDefault();
-                    setIsMobileMenuOpen(false); // Close the menu when an external link is clicked
-                  }}
-                  className={`block px-3 py-2 rounded-md transition-colors hover:bg-gray-300 ${
-                    activeSection === link.id
-                      ? "text-blue-600 font-bold"
-                      : "text-gray-800"
-                  }`}
-                >
-                  {link.label}
-                </Link>
+              <Link
+                key={link.id}
+                href={link.href}
+                onClick={(e) => {
+                  if (link.href.startsWith("#")) {
+                    e.preventDefault(); // Only prevent default for internal links
+                    handleScroll(link.id);
+                  }
+                  setIsMobileMenuOpen(false); // Close the menu for all links
+                }}
+                className={`block px-3 py-2 rounded-md transition-colors hover:bg-gray-300 ${
+                  activeSection === link.id
+                    ? "text-blue-600 font-bold"
+                    : "text-gray-800"
+                }`}
+              >
+                {link.label}
+              </Link>
               )
             )}
             <div className="text-right mt-2">
-              <div className="text-lg text-gray-800">{formattedTime} [SGT]</div>
+              <div className="text-m text-gray-800">{formattedTime} [SGT]</div>
               <div className="text-sm text-gray-800">{formattedDate}</div>
             </div>
           </div>

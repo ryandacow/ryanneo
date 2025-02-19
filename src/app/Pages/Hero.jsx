@@ -54,90 +54,93 @@ const Hero = () => {
 
   return (
     <section
-      id="home"
-      className="flex flex-col lg:flex-row items-center justify-center px-6 lg:px-24 pt-24 pb-24 min-h-screen max-w-[2000px] mx-auto"
-      style={{ scrollMarginTop: "6rem", background: "transparent" }} // ensures transparency
+  id="home"
+  className="flex flex-col lg:flex-row items-center justify-center px-6 lg:px-24 pt-24 pb-24 min-h-screen w-full mx-auto"
+  style={{ scrollMarginTop: "6rem", background: "transparent" }}
+>
+  {/* Text Content */}
+  <div className="lg:w-1/2 flex flex-col items-center text-center lg:text-left px-4 md:px-8 lg:px-12">
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8 }}
     >
-      {/* Text Content */}
-      <div className="lg:w-1/2 text-center lg:text-left px-4 md:px-8 lg:px-12">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-        >
-          <h1 className="text-3xl md:text-5xl lg:text-6xl font-semibold mb-2 text-gray-800 dark:text-gray-200">
-            Hi there 👋 I am
-          </h1>
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold text-indigo-600 dark:text-indigo-400">
-            Ryan Neo
-          </h1>
+      <h1 className="text-3xl md:text-5xl lg:text-6xl font-semibold mb-2 text-gray-800">
+        Hi there 👋 I am
+      </h1>
+      <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold text-indigo-600">
+        Ryan Neo
+      </h1>
 
-          {/* Typewriter Effect */}
-          <p className="text-lg md:text-2xl lg:text-3xl mt-4 mb-6 text-indigo-500 font-semibold">
-            Aspiring <span className="text-indigo-700 dark:text-indigo-300">{currentText}</span><span className="text-indigo-500">|</span>
-          </p>
+      {/* Typewriter Effect */}
+      <p className="text-lg md:text-2xl lg:text-3xl mt-4 mb-6 text-indigo-500 font-semibold">
+        Aspiring <span className="text-indigo-700">{currentText}</span><span className="text-indigo-500">|</span>
+      </p>
 
-          <p className="text-md md:text-lg lg:text-xl mb-8 text-gray-600 dark:text-gray-400 max-w-2xl">
-            Undergraduate at NUS, eager to learn and contribute!
-          </p>
+      <p className="text-md md:text-lg lg:text-xl mb-8 text-gray-600 max-w-2xl">
+        Undergraduate at NUS, eager to learn and contribute!
+      </p>
 
-          {/* Portfolio Button */}
-          <motion.a
-            href="#portfolio"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="inline-block bg-indigo-500 text-white px-6 md:px-8 py-3 md:py-4 rounded-lg text-lg font-semibold shadow-lg hover:shadow-indigo-500/50 transition-all animate-glow"
-          >
-            View My Work
-          </motion.a>
+      {/* Portfolio Button */}
+      <motion.a
+        href="#portfolio"
+        whileHover={{ scale: 1.05 }}
+        whileTap={{ scale: 0.95 }}
+        className="inline-block bg-indigo-500 text-white px-6 md:px-8 py-3 md:py-4 rounded-lg text-lg font-semibold shadow-lg hover:shadow-indigo-500/50 transition-all animate-glow"
+      >
+        View My Work
+      </motion.a>
 
-          {/* Social Buttons */}
-          <div className="flex justify-center lg:justify-start gap-6 mt-12">
-            <SocialIcon 
-              href="https://www.linkedin.com/in/ryanneojh/" 
-              icon={<FaLinkedin />} 
-              color="bg-blue-700"
-            />
-            <SocialIcon
-              href="https://github.com/ryandacow"
-              icon={<FaGithub />}
-              color="bg-black"
-            />
-            <SocialIcon
-              href="https://t.me/RyanDaCow"
-              icon={<FaTelegram />}
-              color="bg-blue-500"
-            />
-            <SocialIcon
-              href="mailto:ryanneo.jh@gmail.com"
-              icon={<FaEnvelope />}
-              color="bg-red-600"
-            />
-          </div>
-        </motion.div>
+      {/* Social Buttons */}
+      <div className="flex justify-center lg:justify-start gap-6 mt-12">
+        <SocialIcon 
+          href="https://www.linkedin.com/in/ryanneojh/" 
+          icon={<FaLinkedin />} 
+          color="bg-blue-700"
+        />
+        <SocialIcon
+          href="https://github.com/ryandacow"
+          icon={<FaGithub />}
+          color="bg-black"
+        />
+        <SocialIcon
+          href="https://t.me/RyanDaCow"
+          icon={<FaTelegram />}
+          color="bg-blue-500"
+        />
+        <SocialIcon
+          href="mailto:ryanneo.jh@gmail.com"
+          icon={<FaEnvelope />}
+          color="bg-red-600"
+        />
       </div>
+    </motion.div>
+  </div>
 
-      {/* Image Container */}
-      <div className="lg:w-1/2 flex justify-center px-4 md:px-8">
-        <div className="relative w-48 md:w-64 lg:w-96 h-[450px] md:h-[550px]">
-          {/* Gradient Rectangle */}
-          <div className="absolute bottom-0 w-full h-6/7 bg-gradient-to-b from-blue-300 to-indigo-500 dark:from-indigo-900/20 dark:to-blue-900/30 rounded-lg shadow-xl border border-blue-300 dark:border-indigo-500" />
-          
-          {/* Photo */}
-          <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="absolute bottom-0 w-full h-full"
-          >
-            <img
-              src="/Profile.png"
-              alt="Ryan Neo"
-              className="w-full h-full object-cover object-center rounded-lg"
-            />
-          </motion.div>
-        </div>
-      </div>
-    </section>
+  {/* Image Container */}
+  <div className="lg:w-1/2 flex justify-center items-center px-4 md:px-8">
+    <motion.div 
+    className="relative w-48 md:w-64 lg:w-96 h-[450px] md:h-[550px] flex self-center"
+    whileHover= {{y:-3}}
+    >
+      {/* Gradient Rectangle */}
+      <div className="absolute bottom-0 w-full h-6/7 bg-gradient-to-b from-blue-300 to-indigo-500 rounded-lg shadow-xl border border-blue-300 animate-glow" />
+      
+      {/* Photo */}
+      <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        animate={{ opacity: 1, y: 0 }}
+        className="absolute bottom-0.5 w-full h-full"
+      >
+        <img
+          src="/Profile.png"
+          alt="Ryan Neo"
+          className="w-full h-full object-cover object-center rounded-lg"
+        />
+      </motion.div>
+    </motion.div>
+  </div>
+</section>
   );
 };
 
