@@ -36,7 +36,7 @@ const ExperienceCard = ({ experience }) => {
         }`}
       >
         {/* Front Side */}
-        <div className="absolute w-full h-full bg-purple-100 dark:bg-gray-800 rounded-lg shadow-lg p-4 flex transform-style-backface-hidden transition-all hover:translate-y-[-3px] group-hover:shadow-xl">
+        <div className="absolute w-full h-full bg-purple-100 rounded-lg shadow-lg p-4 flex transform-style-backface-hidden transition-all hover:translate-y-[-3px] group-hover:shadow-xl">
           {/* Left: Company Image (Only for real experiences) */}
           {!isPlaceholder && (
             <div className="w-1/3 flex justify-center items-center">
@@ -59,9 +59,9 @@ const ExperienceCard = ({ experience }) => {
         </div>
 
         {/* Back Side */}
-        <div className="absolute w-full h-full bg-violet-200 dark:bg-gray-900 rounded-lg shadow-lg p-6 transform rotate-y-180 transform-style-backface-hidden transition-all hover:translate-y-[-3px]">
+        <div className="absolute w-full h-full bg-violet-200 rounded-lg shadow-lg p-6 transform rotate-y-180 transform-style-backface-hidden transition-all hover:translate-y-[-3px]">
           <h3 className="text-lg font-bold text-center">Details</h3>
-          <p className="text-gray-700 dark:text-gray-300 text-sm mt-2">
+          <p className="text-gray-700 text-sm mt-2">
             {currentExperience.description}
           </p>
 

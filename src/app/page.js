@@ -42,7 +42,7 @@ export default function Home() {
       ) : (
         <>
           <Navbar />
-          <main style={{ backgroundColor: "#f5e4d7" }}>
+          <main className="w-full min-w-full min-h-[100dvh] overflow-hidden bg-[#f5e4d7]">
             <Hero />
             <About />
             <Portfolio />

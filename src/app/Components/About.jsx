@@ -101,10 +101,10 @@ const About = () => {
             <h2 className="text-4xl font-bold mb-6 bg-gradient-to-r from-indigo-600 to-blue-500 bg-clip-text text-transparent">
               About Me
             </h2>
-            <p className="text-xl leading-relaxed text-gray-700">
+            <p className="text-xl leading-relaxed text-gray-700 text-justify">
               Hi, I'm <span className="font-semibold text-indigo-600">Ryan</span>! 
               An aspiring Business Analyst who indulges in problem solving and loves exploring new things!
-              I'm also an avid athlete, playing Ultimate Frisbee and Football. Check out my blog for some highlights of mine 🤭
+              I'm also an avid athlete, playing Ultimate Frisbee and Football.
               Feel free to connect via my socials! Always excited to meet new people 😆
             </p>
           </motion.div>

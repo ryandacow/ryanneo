@@ -56,12 +56,12 @@ export default function PortfolioSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: false, amount: 0.2 }}
           transition={{ duration: 0.5 }}
-          className="flex justify-center space-x-4 mb-12"
+          className="flex flex-wrap justify-center gap-3 mb-12 px-4 md:px-8 lg:px-16"
         >
           {[
-            { id: "projects", icon: <Code className="w-5 h-5" />, label: "Projects" },
-            { id: "experiences", icon: <Briefcase className="w-5 h-5" />, label: "Experiences" },
-            { id: "skills", icon: <Award className="w-5 h-5" />, label: "Skills" },
+        { id: "projects", icon: <Code className="w-4 h-4 md:w-5 md:h-5" />, label: "Projects" },
+        { id: "experiences", icon: <Briefcase className="w-4 h-4 md:w-5 md:h-5" />, label: "Experiences" },
+        { id: "skills", icon: <Award className="w-4 h-4 md:w-5 md:h-5" />, label: "Skills" },
           ].map(({ id, icon, label }) => (
             <button
               key={id}

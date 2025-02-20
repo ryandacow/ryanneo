@@ -6,7 +6,7 @@ import { FaLinkedin, FaGithub, FaTelegram, FaEnvelope } from "react-icons/fa";
 const Footer = () => {
   return (
     <footer className="w-full py-6 px-6 md:px-12 bg-[#f5e4d7]">
-      <div className="max-w-[1440px] mx-auto flex flex-col md:flex-row items-center justify-between text-gray-600 dark:text-gray-400 text-sm">
+      <div className="max-w-[1440px] mx-auto flex flex-col md:flex-row items-center justify-between text-gray-600 text-sm">
         
         {/* Left Side - Copyright */}
         <p className="mb-4 md:mb-0">&copy; RyanNeo 2025</p>
@@ -22,7 +22,7 @@ const Footer = () => {
         {/* Right Side - Social Icons */}
         <div className="flex gap-4">
           <SocialIcon href="https://www.linkedin.com/in/ryanneojh/" icon={<FaLinkedin />} color="text-blue-700" />
-          <SocialIcon href="https://github.com/ryandacow" icon={<FaGithub />} color="text-gray-800 dark:text-gray-300" />
+          <SocialIcon href="https://github.com/ryandacow" icon={<FaGithub />} color="text-gray-800" />
           <SocialIcon href="https://t.me/RyanDaCow" icon={<FaTelegram />} color="text-blue-500" />
           <SocialIcon href="mailto:ryanneo.jh@gmail.com" icon={<FaEnvelope />} color="text-red-600" />
         </div>

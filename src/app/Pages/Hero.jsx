@@ -55,7 +55,7 @@ const Hero = () => {
   return (
     <section
   id="home"
-  className="flex flex-col lg:flex-row items-center justify-center px-6 lg:px-24 pt-24 pb-24 min-h-screen w-full mx-auto"
+  className="flex flex-col lg:flex-row items-center justify-center px-6 pt-24 pb-24 min-h-[100dvh] w-full mx-auto"
   style={{ scrollMarginTop: "6rem", background: "transparent" }}
 >
   {/* Text Content */}

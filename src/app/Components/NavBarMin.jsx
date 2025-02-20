@@ -33,7 +33,7 @@ const NavbarMin = ({ predefinedTags, selectedTag, setSelectedTag }) => {
               className={`px-6 py-3 rounded-md transition ${
                 selectedTag === tag
                   ? "bg-violet-400 text-white"
-                  : "bg-gray-300 dark:bg-gray-700"
+                  : "bg-gray-300"
               }`}
             >
               {tag}

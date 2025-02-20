@@ -44,7 +44,7 @@ const BlogPost = () => {
         <p className="text-gray-500 text-sm mb-6">{post.date}</p>
         
         {/* ✅ Markdown rendering with correct lists */}
-        <article className="prose dark:prose-invert">
+        <article className="prose">
           <ReactMarkdown
             remarkPlugins={[remarkGfm, remarkBreaks]}  
             rehypePlugins={[rehypeRaw]}  
