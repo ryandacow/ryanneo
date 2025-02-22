@@ -134,7 +134,7 @@ const Navbar = () => {
             >
               <HiOutlineX />
             </button>
-            <div className="absolute top-6 left-10 text-2xl">
+            <div className="absolute top-6 left-10 text-xl font-playwrite font-bold">
             RyanNeo
 
             </div>
@@ -177,7 +177,11 @@ const Navbar = () => {
               </Link>
               )
             )}
-
+        {/* Time and Date (Mobile View) */}
+        <div className="absolute bottom-10 text-gray-800 text-center">
+              <div className="text-lg">{formattedTime} [SGT]</div>
+              <div className="text-sm">{formattedDate}</div>
+            </div>
           </div>
         </div>
       )}

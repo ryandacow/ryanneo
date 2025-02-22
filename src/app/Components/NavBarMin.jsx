@@ -59,34 +59,48 @@ const NavbarMin = ({ predefinedTags, selectedTag, setSelectedTag }) => {
       </div>
 
       {/* Mobile Dropdown Menu */}
-      {isMobileMenuOpen && (
-        <div className="md:hidden bg-[#f5e4d7] shadow-lg rounded-b-lg">
-          <div className="flex flex-col px-6 py-4 gap-4">
-            {predefinedTags.map((tag) => (
-              <button
-                key={tag}
-                onClick={() => {
-                  setSelectedTag(tag);
-                  setIsMobileMenuOpen(false);
-                }}
-                className={`px-4 py-2 rounded-md transition text-lg ${
-                  selectedTag === tag
-                    ? "bg-violet-400 text-white"
-                    : "bg-gray-300 dark:bg-gray-700"
-                }`}
-              >
-                {tag}
-              </button>
-            ))}
-          </div>
+{isMobileMenuOpen && (
+  <div className="fixed inset-0 z-[100] bg-[#f6ede6] flex flex-col items-center justify-center w-full h-full backdrop-blur-lg">
+    {/* Close Button */}
+    <button
+      onClick={() => setIsMobileMenuOpen(false)}
+      className="absolute top-6 right-8 text-gray-800 text-3xl"
+    >
+      <HiOutlineX />
+    </button>
 
-          {/* Time and Date (Mobile View) */}
-          <div className="flex flex-col items-center py-4 text-gray-800 border-t border-gray-300">
-            <div className="text-lg">{formattedTime} [SGT]</div>
-            <div className="text-sm">{formattedDate}</div>
-          </div>
-        </div>
-      )}
+    {/* Title */}
+    <div className="absolute top-6 left-10 text-xl font-playwrite font-bold">
+      RyanNeo
+    </div>
+
+    {/* Dropdown Items */}
+    <div className="flex flex-col px-6 py-4 gap-6 text-center">
+      {predefinedTags.map((tag) => (
+        <button
+          key={tag}
+          onClick={() => {
+            setSelectedTag(tag);
+            setIsMobileMenuOpen(false);
+          }}
+          className={`px-6 py-3 text-lg rounded-md transition ${
+            selectedTag === tag
+              ? "bg-violet-400 text-white"
+                  : "bg-violet-200"
+          }`}
+        >
+          {tag}
+        </button>
+      ))}
+    </div>
+
+    {/* Time and Date (Mobile View) */}
+    <div className="absolute bottom-10 text-gray-800 text-center">
+      <div className="text-lg">{formattedTime} [SGT]</div>
+      <div className="text-sm">{formattedDate}</div>
+    </div>
+  </div>
+)}
     </nav>
   );
 };

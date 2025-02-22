@@ -121,7 +121,7 @@ const Hero = () => {
   {/* Image Container */}
   <div className="lg:w-1/2 flex justify-center items-center px-4 md:px-8 l:pt-0 pt-10">
     <motion.div 
-    className="relative w-48 md:w-85 lg:w-123 h-[450px] md:h-[700px] l:h-[700px] flex self-center"
+    className="relative w-48 md:w-85 lg:w-123 h-[270px] md:h-[700px] l:h-[700px] flex self-center"
     whileHover= {{y:-3}}
     >
       {/* Gradient Rectangle */}
