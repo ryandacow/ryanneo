@@ -9,21 +9,25 @@ import TechStackIcon from "../Components/TechStackIcon";
 import { projects } from "../../Data/dataProjects"; 
 import { experiences } from "../../Data/dataExperience";
 import { FaHtml5, FaCss3Alt, FaJs, FaReact, FaNodeJs, FaPython } from "react-icons/fa";
-import { SiFirebase, SiTailwindcss, SiVercel , SiFlask , SiSupabase, SiRender} from "react-icons/si";
+import { SiNextdotjs, SiFirebase, SiTailwindcss, SiVercel , SiFlask , SiSupabase, SiRender} from "react-icons/si";
+import { PiMicrosoftExcelLogoBold } from "react-icons/pi";
 
 const techStacks = [
     { icon: <FaHtml5 size={40} className="text-orange-500" />, language: "HTML" },
     { icon: <FaCss3Alt size={40} className="text-blue-500" />, language: "CSS" },
     { icon: <FaJs size={40} className="text-yellow-400" />, language: "JavaScript" },
     { icon: <FaReact size={40} className="text-blue-400" />, language: "ReactJS" },
-    { icon: <FaNodeJs size={40} className="text-green-500" />, language: "Node.js" },
+    { icon: <SiNextdotjs size={40} className="text-black-500" />, language: "Next.js" },
     { icon: <SiTailwindcss size={40} className="text-blue-400" />, language: "Tailwind CSS" },
     { icon: <FaPython size={40} className="text-yellow-400" />, language: "Python" },
     { icon: <SiFlask size={40} className="text-blue-500" />, language: "Flask" },
+    { icon: <img src="/sql.png" alt="SQL" className="w-7 h-10" />, language: "SQL" },
     { icon: <SiVercel size={40} className="text-black" />, language: "Vercel" },
     { icon: <SiRender size={40} className="text-black" />, language: "Render" },
     { icon: <SiSupabase size={40} className="text-emerald-300" />, language: "Supabase" },
     { icon: <SiFirebase size={40} className="text-orange-400" />, language: "Firebase" },
+    { icon: <PiMicrosoftExcelLogoBold size={40} className="text-green-600" />, language: "Excel" },
+    { icon: <img src="/powerbi.png" alt="Power BI" className="w-10 h-10" />, language: "Power BI" }
   ];
 
 export default function PortfolioSection() {

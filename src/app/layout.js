@@ -1,10 +1,17 @@
 import { Inter } from "next/font/google";
+import { Playwrite_IT_Moderna } from "next/font/google";
 import "./globals.css";
 
 const eb_garamond = Inter({
   variable: "--font-eb_garamond", // Defines a CSS variable for use in CSS
   subsets: ["latin"],
   weight: [ "500", "600"], // Adjust weights as needed
+});
+
+const playwriteFont = Playwrite_IT_Moderna({
+  variable: "--font-playwrite", // Define CSS variable
+  subsets: ["latin"],
+  weight: ["400", "100", "200", "300"],
 });
 
 export const metadata = {
@@ -30,8 +37,8 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={eb_garamond.variable}>
-      <body className="bg-[#f6ede6] w-full min-h-screen overflow-x-hidden">
+    <html lang="en" className={`${eb_garamond.variable} ${playwriteFont.variable}`}>
+      <body className="bg-[#f6ede6] w-full min-h-screen overflow-x-hidden antialiased">
         {children}
       </body>
     </html>

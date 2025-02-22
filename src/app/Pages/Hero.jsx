@@ -78,7 +78,8 @@ const Hero = () => {
       </p>
 
       <p className="text-md md:text-lg lg:text-xl mb-8 text-gray-600 max-w-2xl">
-        Undergraduate at NUS, eager to learn and contribute!
+        Undergraduate at NUS, eager to learn and contribute! <br />
+        Actively seeking tech internship opportunities this summer! <br />
       </p>
 
       {/* Portfolio Button */}
@@ -118,9 +119,9 @@ const Hero = () => {
   </div>
 
   {/* Image Container */}
-  <div className="lg:w-1/2 flex justify-center items-center px-4 md:px-8">
+  <div className="lg:w-1/2 flex justify-center items-center px-4 md:px-8 l:pt-0 pt-10">
     <motion.div 
-    className="relative w-48 md:w-64 lg:w-96 h-[450px] md:h-[550px] flex self-center"
+    className="relative w-48 md:w-85 lg:w-123 h-[450px] md:h-[700px] l:h-[700px] flex self-center"
     whileHover= {{y:-3}}
     >
       {/* Gradient Rectangle */}

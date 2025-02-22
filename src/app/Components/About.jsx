@@ -76,11 +76,11 @@ const About = () => {
               whileHover={{ y: -5 }}
               className="flex items-center gap-4 p-4 bg-white/80 backdrop-blur-sm rounded-xl shadow-md hover:shadow-lg transition-shadow"
             >
-              <div className="p-3 bg-green-100 rounded-lg">
-                <Globe className="w-8 h-8 text-green-600" />
+              <div className="p-3 bg-indigo-100 rounded-lg">
+                <Globe className="w-8 h-8 text-indigo-600" />
               </div>
               <div className="text-center flex-1">
-                <p className="text-xl font-bold text-green-600">1+</p>
+                <p className="text-xl font-bold text-indigo-600">1+</p>
                 <p className="text-gray-600">Years Experience</p>
               </div>
             </motion.div>

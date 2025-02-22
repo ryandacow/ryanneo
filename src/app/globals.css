@@ -12,6 +12,10 @@ html, body {
   font-family: var(--font-eb_garamond), sans-serif;
 }
 
+.font-playwrite {
+  font-family: var(--font-playwrite), cursive;
+}
+
 .nav-link {
   transition: color 0.3s, transform 0.3s;
 }
