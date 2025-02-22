@@ -15,13 +15,13 @@ export const projects = [
     id: 2,
     name: "BookBuddy",
     context: "NUS Hack4Good",
-    shortDesc: "Web application designed to help users manage tasks, meetings, and group activities efficiently",
+    shortDesc: "Webapp designed to help users manage tasks, meetings, and group activities efficiently",
     detailedDesc:
       "This is a more detailed explanation of Project Two, highlighting key features and technologies used.",
     image: "/H4G.png",
     source: "https://github.com/shengweikoh/pookierookies",
     live: "https://pookie-rookies.web.app/",
-    color: { bg: "bg-green-100", text: "text-green-800" },
+    color: { bg: "bg-[#FAF3E0]", text: "text-green-800" },
     scale: "w-50", // Custom scale for this image
   },
   {

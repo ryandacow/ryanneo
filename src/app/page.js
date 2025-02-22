@@ -42,7 +42,7 @@ export default function Home() {
       ) : (
         <>
           <Navbar />
-          <main className="w-full min-w-full min-h-[100dvh] overflow-hidden bg-[#f5e4d7]">
+          <main className="w-full min-h-[100dvh] overflow-hidden bg-[#f6ede6]">
             <Hero />
             <About />
             <Portfolio />

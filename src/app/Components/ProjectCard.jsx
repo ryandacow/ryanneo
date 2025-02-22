@@ -22,9 +22,7 @@ const ProjectCard = ({ project }) => {
       >
         {/* Frontside */}
         <div
-          className={`absolute w-full h-full rounded-lg shadow-lg overflow-hidden transform-style-backface-hidden transition-all hover:translate-y-[-3px] group-hover:shadow-lg ${
-            project.color.bg
-          } ${project.color.text}`}
+          className={`absolute w-full h-full rounded-lg shadow-lg overflow-hidden transform-style-backface-hidden transition-all hover:translate-y-[-3px] group-hover:shadow-lg text-[#1A1A1A] bg-purple-100`}
         >
           <div className="flex flex-col items-center justify-center h-full px-5">
             {/* Render Icon or Image */}
@@ -39,15 +37,13 @@ const ProjectCard = ({ project }) => {
             <p className="text-lg font-semibold text-center mb-4">
               {project.context}
             </p>
-            <p className="text-left text-base w-full">{project.shortDesc}</p>
+            <p className="text-justify text-base w-full">{project.shortDesc}</p>
           </div>
         </div>
 
         {/* Backside */}
         <div
-          className={`absolute w-full h-full rounded-lg shadow-lg overflow-hidden transform rotate-y-180 transform-style-backface-hidden transition-all hover:translate-y-[-3px] ${
-            project.color.bg
-          } ${project.color.text}`}
+          className={`absolute w-full h-full rounded-lg shadow-lg overflow-hidden transform rotate-y-180 transform-style-backface-hidden transition-all hover:translate-y-[-3px] bg-purple-100 text-indigo-500`}
         >
           <div className="flex flex-col items-center justify-center h-full px-4 py-6">
             <h3 className="text-2xl font-bold mb-6 text-center">
@@ -59,9 +55,7 @@ const ProjectCard = ({ project }) => {
                 href={project.source}
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`px-4 py-2 border-2 rounded-lg shadow-md transition text-sm flex items-center gap-2 ${
-                  project.color.text
-                } ${project.color.bg} border-${project.color.text} hover:translate-y-[-3px]`}
+                className={`px-4 py-2 border-2 rounded-lg shadow-md transition text-sm flex items-center gap-2 text-indigo-500 bg-purple-100 border-indigo-500 hover:translate-y-[-3px]`}
               >
                 <FaGithub /> Source
               </a>
@@ -70,9 +64,7 @@ const ProjectCard = ({ project }) => {
                 href={project.live}
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`px-4 py-2 border-2 rounded-lg shadow-md transition text-sm flex items-center gap-2 ${
-                  project.color.text
-                } ${project.color.bg} border-${project.color.text} hover:translate-y-[-3px]`}
+                className={`px-4 py-2 border-2 rounded-lg shadow-md transition text-sm flex items-center gap-2 text-indigo-500 bg-purple-100 border-indigo-500 hover:translate-y-[-3px]`}
               >
                 <FaExternalLinkAlt /> View
               </a>
@@ -80,9 +72,7 @@ const ProjectCard = ({ project }) => {
               {project.blog && (
                 <a
                   href={project.blog}
-                  className={`px-4 py-2 border-2 rounded-lg shadow-md transition text-sm flex items-center gap-2 ${
-                    project.color.text
-                  } ${project.color.bg} border-${project.color.text} hover:translate-y-[-3px]`}
+                  className={`px-4 py-2 border-2 rounded-lg shadow-md transition text-sm flex items-center gap-2 text-indigo-500 bg-purple-100 border-indigo-500 hover:translate-y-[-3px]`}
                 >
                   <FaBook /> Blog
                 </a>

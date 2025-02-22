@@ -62,11 +62,11 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="fixed top-0 left-0 w-full z-100 bg-[#f5e4d7]">
+    <nav className="fixed top-0 left-0 w-full z-100 bg-[#f6ede6]">
       <div className="container mx-auto px-4 py-4 h-20 relative flex items-center">
         {/* Brand (Left) */}
         <div className="absolute left-0 items-start">
-          <div className="text-2xl md:pl-0 pl-6 font-bold text-gray-800">RyanNeo</div>
+          <div className="text-2xl l:pl-0 pl-6 font-bold text-gray-800">RyanNeo</div>
         </div>
 
         {/* Centered Nav Links */}
@@ -106,7 +106,7 @@ const Navbar = () => {
         </div>
 
         {/* Time/Date (Right) */}
-        <div className="absolute right-0 pr-4 hidden md:flex flex-col items-end">
+        <div className="absolute right-0 l:pr-0 pr-6 hidden md:flex flex-col items-end">
           <div className="text-lg text-gray-800">{formattedTime} [SGT]</div>
           <div className="text-sm text-gray-800">{formattedDate}</div>
         </div>
@@ -125,8 +125,19 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
-        <div className="md:hidden bg-[#e5d5cb] shadow-md">
-          <div className="container mx-auto px-4 py-4 flex flex-col gap-2">
+        <div className="md:hidden shadow-md">
+          <div className="fixed inset-0 z-[100] bg-[#f6ede6] flex flex-col items-center justify-center w-full h-full backdrop-blur-lg">
+            {/* Close Button */}
+            <button
+              onClick={() => setIsMobileMenuOpen(false)}
+              className="absolute top-6 right-8 text-gray-800 text-3xl"
+            >
+              <HiOutlineX />
+            </button>
+            <div className="absolute top-6 left-10 text-2xl">
+            RyanNeo
+
+            </div>
             {navLinks.map((link) =>
               link.href.startsWith("#") ? (
                 <a
@@ -166,10 +177,7 @@ const Navbar = () => {
               </Link>
               )
             )}
-            <div className="text-right mt-2">
-              <div className="text-m text-gray-800">{formattedTime} [SGT]</div>
-              <div className="text-sm text-gray-800">{formattedDate}</div>
-            </div>
+
           </div>
         </div>
       )}
