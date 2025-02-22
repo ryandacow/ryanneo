@@ -95,7 +95,7 @@ const About = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: false, amount: 0.2 }}
             transition={{ duration: 1.5 }}
-            className="relative bg-white/80 backdrop-blur-sm shadow-2xl rounded-2xl p-8 overflow-hidden bg-gradient-to-br from-indigo-50/80 to-blue-50/80"
+            className="relative backdrop-blur-sm shadow-2xl rounded-2xl p-8 overflow-hidden bg-gradient-to-br from-indigo-50/80 to-blue-50/80"
           >
             <div className="flex -top-20 -left-20  bg-blue-200/30 rounded-full blur-xl" />
             <h2 className="text-4xl font-bold mb-6 bg-gradient-to-r from-indigo-600 to-blue-500 bg-clip-text text-transparent">
@@ -118,7 +118,7 @@ const About = () => {
               viewport={{ once: false, amount: 0.2 }}
               transition={{ duration: 1.5 }}
               whileHover={{ scale: 1.02 }}
-              className="bg-indigo-100/80 backdrop-blur-sm shadow-xl rounded-2xl p-8 relative overflow-hidden"
+              className="bg-gradient-to-br from-indigo-50/80 to-blue-50/80 backdrop-blur-sm shadow-xl rounded-2xl p-8 relative overflow-hidden"
             >
               <div className="absolute -top-10 -right-10 w-32 h-32 bg-indigo-200/30 rounded-full blur-xl" />
               <div className="flex items-center gap-4 mb-4">
@@ -152,28 +152,28 @@ const About = () => {
               viewport={{ once: false, amount: 0.2 }}
               transition={{ duration: 1.5 }}
               whileHover={{ scale: 1.02 }}
-              className="bg-green-100/80 backdrop-blur-sm shadow-xl rounded-2xl p-8 relative overflow-hidden"
+              className="bg-gradient-to-br from-indigo-50/80 to-blue-50/80 backdrop-blur-sm shadow-xl rounded-2xl p-8 relative overflow-hidden"
             >
-              <div className="absolute -top-10 -left-10 w-32 h-32 bg-green-200/30 rounded-full blur-xl" />
+              <div className="absolute -top-10 -left-10 w-32 h-32 bg-indigo-200/30 rounded-full blur-xl" />
               <div className="flex items-center gap-4 mb-4">
-                <Heart className="w-10 h-10 text-green-600 " />
-                <h3 className="text-2xl font-bold text-green-700">Passions</h3>
+                <Heart className="w-10 h-10 text-indigo-600" />
+                <h3 className="text-2xl font-bold text-indigo-700">Passions</h3>
               </div>
               <div className="grid grid-cols-2 gap-4">
                 <div className="flex items-center gap-3 p-3 bg-white/50 rounded-lg">
-                  <Trophy className="w-6 h-6 text-green-600" />
+                  <Trophy className="w-6 h-6 text-indigo-600" />
                   <span>Sports</span>
                 </div>
                 <div className="flex items-center gap-3 p-3 bg-white/50 rounded-lg">
-                  <Brain className="w-6 h-6 text-green-600" />
+                  <Brain className="w-6 h-6 text-indigo-600" />
                   <span>AI Tech</span>
                 </div>
                 <div className="flex items-center gap-3 p-3 bg-white/50 rounded-lg">
-                  <Globe className="w-6 h-6 text-green-600" />
+                  <Globe className="w-6 h-6 text-indigo-600" />
                   <span>Travel</span>
                 </div>
                 <div className="flex items-center gap-3 p-3 bg-white/50 rounded-lg">
-                  <PiShirtFolded className="w-6 h-6 text-green-600" />
+                  <PiShirtFolded className="w-6 h-6 text-indigo-600" />
                   <span>Fashion</span>
                 </div>
               </div>

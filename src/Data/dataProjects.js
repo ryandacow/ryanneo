@@ -8,8 +8,7 @@ export const projects = [
     image: "/ExpenSplit.png",
     source: "https://github.com/ryandacow/ExpenSplit",
     live: "https://t.me/expensplit_bot",
-    blog: "/blog/ExpenSplit",
-    color: { bg: "bg-lime-200", text: "text-green-800" },
+    // blog: "/blog/ExpenSplit",
   },
   {
     id: 2,
@@ -20,8 +19,7 @@ export const projects = [
       "This is a more detailed explanation of Project Two, highlighting key features and technologies used.",
     image: "/H4G.png",
     source: "https://github.com/shengweikoh/pookierookies",
-    live: "https://pookie-rookies.web.app/",
-    color: { bg: "bg-[#FAF3E0]", text: "text-green-800" },
+    // live: "https://pookie-rookies.web.app/",
     scale: "w-50", // Custom scale for this image
   },
   {
@@ -34,7 +32,6 @@ export const projects = [
     image: "/portfoliowebsite.png",
     source: "https://github.com/ryandacow/ryanneo",
     live: "https://project-three.example.com",
-    color: { bg: "bg-red-100", text: "text-red-800" },
     scale: "h-80, w-80",
   }
 ];

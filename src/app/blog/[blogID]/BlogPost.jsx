@@ -33,12 +33,12 @@ const BlogPost = () => {
   }, [blogID]);
 
   if (loading) return <p className="text-center text-gray-500">Loading...</p>;
-  if (!post) return <section className="bg-[#f5e4d7] min-h-screen flex items-center justify-center">
+  if (!post) return <section className="min-h-screen flex items-center justify-center">
     <p className="text-gray-500 text-lg">Post not found.</p>
   </section>;
 
   return (
-    <section className="min-h-screen px-6 py-16 bg-[#f5e4d7]">
+    <section className="min-h-screen px-6 py-16">
       <div className="max-w-3xl mx-auto">
         <h1 className="text-4xl font-bold mb-4">{post.title}</h1>
         <p className="text-gray-500 text-sm mb-6">{post.date}</p>

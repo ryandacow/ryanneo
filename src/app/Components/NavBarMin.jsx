@@ -15,7 +15,7 @@ const NavbarMin = ({ predefinedTags, selectedTag, setSelectedTag }) => {
   const formattedDate = currentTime.toLocaleDateString("en-GB", dateOptions);
 
   return (
-    <nav className="fixed min-w-screen z-50 bg-[#f5e4d7] rounded-lg">
+    <nav className="fixed min-w-screen z-50 rounded-lg">
       <div className="flex mx-auto px-4 py-4 h-20 justify-around items-center">
         {/* daCow Blog (Top Left) */}
         <div className="text-2xl md:text-3xl font-bold text-gray-800">
@@ -33,7 +33,7 @@ const NavbarMin = ({ predefinedTags, selectedTag, setSelectedTag }) => {
               className={`px-6 py-3 rounded-md transition ${
                 selectedTag === tag
                   ? "bg-violet-400 text-white"
-                  : "bg-gray-300"
+                  : "bg-violet-200"
               }`}
             >
               {tag}

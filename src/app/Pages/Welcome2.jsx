@@ -72,7 +72,7 @@ const WelcomePage2 = ({ onComplete }) => {
   };
 
   return (
-    <div style={{ backgroundColor: "#f5e4d7" }} className="h-screen w-full relative">
+    <div style={{ backgroundColor: "#f6ede6" }} className="h-screen w-full relative">
       {/* Welcome Screen */}
       <div ref={welcomeRef} className="absolute inset-0 flex flex-col items-center justify-center">
         <div className="text-center space-y-6 overflow-hidden">

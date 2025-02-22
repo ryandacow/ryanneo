@@ -55,23 +55,32 @@ const ProjectCard = ({ project }) => {
                 href={project.source}
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={(e) => e.stopPropagation()}
                 className={`px-4 py-2 border-2 rounded-lg shadow-md transition text-sm flex items-center gap-2 text-indigo-500 bg-purple-100 border-indigo-500 hover:translate-y-[-3px]`}
               >
                 <FaGithub /> Source
               </a>
               {/* View Button */}
-              <a
+              {project.live ? 
+              (<a
                 href={project.live}
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={(e) => e.stopPropagation()}
                 className={`px-4 py-2 border-2 rounded-lg shadow-md transition text-sm flex items-center gap-2 text-indigo-500 bg-purple-100 border-indigo-500 hover:translate-y-[-3px]`}
               >
                 <FaExternalLinkAlt /> View
-              </a>
+              </a>) :
+              <span
+              className="px-4 py-2 border-2 rounded-lg shadow-md transition text-sm text-indigo-500 bg-purple-100 border-indigo-500 hover:translate-y-[-3px]"
+              onClick={(e) => e.stopPropagation()}>
+              Site Discontinued :'(
+            </span>}   
               {/* Optional Blog Button */}
               {project.blog && (
                 <a
                   href={project.blog}
+                  onClick={(e) => e.stopPropagation()}
                   className={`px-4 py-2 border-2 rounded-lg shadow-md transition text-sm flex items-center gap-2 text-indigo-500 bg-purple-100 border-indigo-500 hover:translate-y-[-3px]`}
                 >
                   <FaBook /> Blog

@@ -39,7 +39,6 @@ const BlogList = () => {
       <section
         id="blog"
         className="min-h-screen py-16 w-full"
-        style={{ backgroundColor: "#f5e4d7" }} // Set consistent background color
       >
         <div className="container mx-auto px-6 pt-24 sm:px-8 lg:px-16">
           {/* BLOG POSTS */}
