@@ -6,7 +6,7 @@ export const projects = [
     shortDesc: "Telegram bot for tracking and splitting group expenses",
     detailedDesc: `First ever project for me to practice Python, a Telegram bot that allows users to easily track and split expenses among group members.\n\nIt supports adding expenses, tracking balances, and exporting summaries.`,
     image: "/ExpenSplit.png",
-    source: "https://github.com/ryandacow/ExpenSplit",
+    source: "https://github.com/ryandacow/expensplit_bot",
     live: "https://t.me/expensplit_bot",
     // blog: "/blog/ExpenSplit",
   },
