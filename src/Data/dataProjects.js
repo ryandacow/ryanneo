@@ -31,7 +31,7 @@ export const projects = [
       "This is a more detailed explanation of Project Three, highlighting key features and technologies used.",
     image: "/Website.png",
     source: "https://github.com/ryandacow/ryanneo",
-    live: "https://project-three.example.com",
+    live: "https://ryanneo.vercel.app",
     scale: "h-80, w-80",
   }
 ];
