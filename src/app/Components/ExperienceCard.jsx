@@ -59,7 +59,7 @@ const ExperienceCard = ({ experience }) => {
         </div>
 
         {/* Back Side */}
-        <div className="absolute w-full h-full bg-violet-200 rounded-lg shadow-lg p-6 transform rotate-y-180 transform-style-backface-hidden transition-all hover:translate-y-[-3px]">
+        <div className="absolute w-full h-full bg-purple-100 rounded-lg shadow-lg p-6 transform rotate-y-180 transform-style-backface-hidden transition-all hover:translate-y-[-3px]">
           <h3 className="text-lg font-bold text-center">Details</h3>
           <p className="text-gray-700 text-sm mt-2">
             {currentExperience.description}

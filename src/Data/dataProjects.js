@@ -29,7 +29,7 @@ export const projects = [
     shortDesc: "Portfolio Website for me!",
     detailedDesc:
       "This is a more detailed explanation of Project Three, highlighting key features and technologies used.",
-    image: "/portfoliowebsite.png",
+    image: "/Website.png",
     source: "https://github.com/ryandacow/ryanneo",
     live: "https://project-three.example.com",
     scale: "h-80, w-80",
