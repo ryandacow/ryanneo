@@ -1,5 +1,6 @@
 import { Inter } from "next/font/google";
 import { Playwrite_IT_Moderna } from "next/font/google";
+import { Analytics } from '@vercel/analytics/next';
 import "./globals.css";
 
 const eb_garamond = Inter({
@@ -40,6 +41,7 @@ export default function RootLayout({ children }) {
     <html lang="en" className={`${eb_garamond.variable} ${playwriteFont.variable}`}>
       <body className="bg-[#f6ede6] w-full min-h-screen overflow-x-hidden antialiased">
         {children}
+        <Analytics />
       </body>
     </html>
   );
