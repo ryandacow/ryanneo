@@ -92,7 +92,7 @@ export default function PortfolioSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: false, amount: 0.2 }}
               transition={{ duration: 0.6, ease: "easeOut" }}
-              className="flex flex-wrap justify-center gap-y-16"
+              className="flex flex-wrap justify-center gap-y-16 pb-10"
             >
               {projects.map((project) => (
                 <div key={project.id} className="mx-8">
