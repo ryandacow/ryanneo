@@ -128,7 +128,7 @@ const About = () => {
               <ul className="space-y-3 pl-2 text-gray-700">
                 <li className="flex gap-3 items-center text-left">
                   <div className="w-2 h-2 bg-indigo-500 rounded-full" />
-                  Complete portfolio website
+                  Break into my Ultimate club's 1st team
                 </li>
                 <li className="flex gap-3 items-center text-left">
                   <div className="w-2.5 h-2 bg-indigo-500 rounded-full" />
@@ -137,10 +137,6 @@ const About = () => {
                 <li className="flex gap-3 items-center text-left">
                   <div className="w-2 h-2 bg-indigo-500 rounded-full" />
                   Develop data analysis framework
-                </li>
-                <li className="flex gap-3 items-center text-left">
-                  <div className="w-2 h-2 bg-indigo-500 rounded-full" />
-                  Break into my Ultimate club's 1st team
                 </li>
               </ul>
             </motion.div>

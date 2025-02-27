@@ -3,8 +3,8 @@ import { Playwrite_IT_Moderna } from "next/font/google";
 import { Analytics } from '@vercel/analytics/next';
 import "./globals.css";
 
-const eb_garamond = Inter({
-  variable: "--font-eb_garamond", // Defines a CSS variable for use in CSS
+const interfont = Inter({
+  variable: "--font-inter", // Defines a CSS variable for use in CSS
   subsets: ["latin"],
   weight: [ "500", "600"], // Adjust weights as needed
 });
@@ -38,7 +38,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={`${eb_garamond.variable} ${playwriteFont.variable}`}>
+    <html lang="en" className={`${interfont.variable} ${playwriteFont.variable}`}>
       <body className="bg-[#f6ede6] w-full min-h-screen overflow-x-hidden antialiased">
         {children}
         <Analytics />

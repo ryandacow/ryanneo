@@ -55,7 +55,7 @@ const Hero = () => {
   return (
     <section
   id="home"
-  className="flex flex-col lg:flex-row items-center justify-center px-6 pt-24 pb-24 min-h-[100dvh] w-full mx-auto"
+  className="flex flex-col-reverse lg:flex-row items-center justify-center px-6 pt-24 pb-24 min-h-[100dvh] w-full mx-auto"
   style={{ scrollMarginTop: "6rem", background: "transparent" }}
 >
   {/* Text Content */}
@@ -65,10 +65,10 @@ const Hero = () => {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8 }}
     >
-      <h1 className="text-3xl md:text-5xl lg:text-6xl font-semibold mb-2 text-gray-800">
-        Hi there 👋 I am
+      <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-semibold mb-2 text-gray-800">
+        Hello 👋 I'm
       </h1>
-      <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold text-indigo-600">
+      <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-extrabold text-indigo-600">
         Ryan Neo
       </h1>
 
@@ -119,9 +119,9 @@ const Hero = () => {
   </div>
 
   {/* Image Container */}
-  <div className="lg:w-1/2 flex justify-center items-center px-4 md:px-8 l:pt-0 pt-10">
+  <div className="lg:w-1/2 flex justify-center items-center px-4 md:px-8 l:pt-0 pb-10">
     <motion.div 
-    className="relative w-48 md:w-85 lg:w-123 h-[270px] md:h-[700px] l:h-[700px] flex self-center"
+    className="relative w-40 h-58 md:w-56 md:h-80 lg:w-80 lg:h-[500px] xl:w-96 xl:h-[600px] flex self-center"
     whileHover= {{y:-3}}
     >
       {/* Gradient Rectangle */}

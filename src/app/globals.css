@@ -9,7 +9,7 @@ html, body {
   min-height: 100vh;
   overflow-x: hidden; /* Prevents horizontal scrolling */
   background-color: #f6ede6; /* Apply the background color */
-  font-family: var(--font-eb_garamond), sans-serif;
+  font-family: var(--font-inter), sans-serif;
 }
 
 .font-playwrite {
