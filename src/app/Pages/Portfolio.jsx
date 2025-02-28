@@ -22,12 +22,15 @@ const techStacks = [
     { icon: <FaPython size={40} className="text-yellow-400" />, language: "Python" },
     { icon: <SiFlask size={40} className="text-blue-500" />, language: "Flask" },
     { icon: <img src="/SQL.svg" alt="SQL" className="w-7 h-10" />, language: "SQL" },
+    { icon: <img src="/Pandas.svg" alt="Pandas" className="w-10 h-10" />, language: "Pandas" },
+    { icon: <img src="/NumPy.svg" alt="NumPy" className="w-10 h-10" />, language: "NumPy" },
+    { icon: <img src="/Sklearn.svg" alt="Scikit-Learn" className="w-14 h-10" />, language: "Scikit-Learn" },
     { icon: <SiVercel size={40} className="text-black" />, language: "Vercel" },
     { icon: <SiRender size={40} className="text-black" />, language: "Render" },
     { icon: <SiSupabase size={40} className="text-emerald-300" />, language: "Supabase" },
     { icon: <SiFirebase size={40} className="text-orange-400" />, language: "Firebase" },
     { icon: <PiMicrosoftExcelLogoBold size={40} className="text-green-600" />, language: "Excel" },
-    { icon: <img src="/PowerBi.svg" alt="Power BI" className="w-10 h-10" />, language: "Power BI" }
+    { icon: <img src="/PowerBi.svg" alt="Power BI" className="w-10 h-10" />, language: "Power BI" },
   ];
 
 export default function PortfolioSection() {
