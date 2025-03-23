@@ -21,7 +21,7 @@ const About = () => {
   return (
     <section
       id="about"
-      className="min-h-screen flex items-center justify-center text-center text-gray-800 px-6 py-16 lg:py-30 lg:pb-50 relative z-10"
+      className="min-h-screen flex items-center justify-center text-center text-gray-800 px-6 py-16 xl:py-30 lg:pb-50 relative z-10"
       style={{ scrollMarginTop: "6rem" }}
     >
       <div className="w-full max-w-6xl grid grid-cols-1 lg:grid-cols-3 gap-8">
@@ -132,11 +132,11 @@ const About = () => {
                 </li>
                 <li className="flex gap-3 items-center text-left">
                   <div className="w-2.5 h-2 bg-indigo-500 rounded-full" />
-                  Learn and implement one machine learning model
+                  Implement 1 Simple ML-powered Webapp
                 </li>
                 <li className="flex gap-3 items-center text-left">
                   <div className="w-2 h-2 bg-indigo-500 rounded-full" />
-                  Develop data analysis framework
+                  Implement 1 Deep-Learning Model
                 </li>
               </ul>
             </motion.div>

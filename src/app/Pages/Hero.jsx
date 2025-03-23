@@ -5,7 +5,7 @@ import { useScroll, useTransform, motion, useSpring } from "framer-motion";
 import { FaLinkedin, FaGithub, FaTelegram, FaEnvelope } from "react-icons/fa";
 
 // Typewriter effect roles
-const roles = ["Business Analyst", "Data Scientist", "Full Stack Developer"];
+const roles = ["Business Analyst", "AI Engineer", "Full Stack Developer"];
 const typingSpeed = 100;
 const erasingSpeed = 50;
 const pauseDuration = 1000;
@@ -65,10 +65,10 @@ const Hero = () => {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8 }}
     >
-      <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-semibold mb-2 text-gray-800">
+      <h1 className="text-3xl md:text-3xl lg:text-4xl xl:text-6xl font-semibold mb-2 text-gray-800">
         Hello 👋 I'm
       </h1>
-      <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-extrabold text-indigo-600">
+      <h1 className="text-4xl md:text-4xl lg:text-5xl xl:text-7xl font-extrabold text-indigo-600">
         Ryan Neo
       </h1>
 
@@ -77,7 +77,7 @@ const Hero = () => {
         Aspiring <span className="text-indigo-700">{currentText}</span><span className="text-indigo-500">|</span>
       </p>
 
-      <p className="text-md md:text-lg lg:text-xl mb-8 text-gray-600 max-w-2xl">
+      <p className="hidden md:block text-md md:text-lg lg:text-lg mb-8 text-gray-600 max-w-2xl">
         Undergraduate at NUS, eager to learn and contribute! <br />
         Actively seeking tech internship opportunities this summer! <br />
       </p>
@@ -121,7 +121,7 @@ const Hero = () => {
   {/* Image Container */}
   <div className="lg:w-1/2 flex justify-center items-center px-4 md:px-8 l:pt-0 pb-10">
     <motion.div 
-    className="relative w-40 h-58 md:w-56 md:h-80 lg:w-80 lg:h-[500px] xl:w-96 xl:h-[600px] flex self-center"
+    className="relative w-40 h-58 md:w-56 lg:w-80 md:h-80 lg:h-[570px] xl:w-96 xl:h-[600px] flex self-center"
     whileHover= {{y:-3}}
     >
       {/* Gradient Rectangle */}

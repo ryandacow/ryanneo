@@ -17,7 +17,7 @@ const ExperienceCard = ({ experience }) => {
   const placeholderExperience = {
     role: "Seeking to Intern!",
     company: "Looking for opportunities to grow",
-    duration: "Available May to July 2025",
+    duration: "Available May to August 2025",
     description:
       "I'm currently seeking an internship opportunity to learn and contribute in a professional environment!",
   };
