@@ -16,9 +16,9 @@ const NavbarMin = ({ predefinedTags, selectedTag, setSelectedTag }) => {
 
   return (
     <nav className="fixed min-w-screen z-50 rounded-lg">
-      <div className="flex mx-auto px-4 py-4 h-20 justify-around items-center">
+      <div className="flex mx-auto px-4 py-4 h-20 justify-between items-center">
         {/* daCow Blog (Top Left) */}
-        <div className="text-2xl md:text-3xl font-bold font-playwrite text-gray-800">
+        <div className="text-2xl  font-bold font-playwrite text-gray-800">
           <Link href="/" className="hover:text-[#4B0082] transition">
             daCow Blog 🐮
           </Link>

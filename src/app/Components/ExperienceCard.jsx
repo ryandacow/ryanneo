@@ -17,7 +17,7 @@ const ExperienceCard = ({ experience }) => {
   const placeholderExperience = {
     role: "Seeking to Intern!",
     company: "Looking for opportunities to grow",
-    duration: "Available May to August 2025",
+    duration: "Available Summer 2026!",
     description:
       "I'm currently seeking an internship opportunity to learn and contribute in a professional environment!",
   };
@@ -40,27 +40,39 @@ const ExperienceCard = ({ experience }) => {
           {/* Left: Company Image (Only for real experiences) */}
           {!isPlaceholder && (
             <div className="w-1/3 flex justify-center items-center">
-                <img
+              <img
                 src={currentExperience.image}
                 alt={currentExperience.company}
                 className="h-100 w-100 object-contain ml-10"
-                />
+              />
             </div>
           )}
 
           {/* Right: Role, Company, Duration (Full Width for Placeholder) */}
-          <div className={`${isPlaceholder ? "w-full text-center" : "w-2/3 ml-10"} flex flex-col justify-center`}>
-            <h3 className={`text-lg font-bold ${isPlaceholder ? "text-indigo-500" : ""}`}>
+          <div
+            className={`${
+              isPlaceholder ? "w-full text-center" : "w-2/3 ml-10"
+            } flex flex-col justify-center`}
+          >
+            <h3
+              className={`text-lg font-bold ${
+                isPlaceholder ? "text-indigo-500" : ""
+              }`}
+            >
               {currentExperience.role}
             </h3>
             <p className="text-indigo-500">{currentExperience.company}</p>
-            <p className="text-gray-500 text-sm">{currentExperience.duration}</p>
+            <p className="text-gray-500 text-sm">
+              {currentExperience.duration}
+            </p>
           </div>
         </div>
 
         {/* Back Side */}
         <div className="absolute w-full h-full bg-purple-100 rounded-lg shadow-lg p-6 transform rotate-y-180 transform-style-backface-hidden transition-all hover:translate-y-[-3px]">
-          <h3 className="text-lg font-bold text-center">Details</h3>
+          <h3 className="text-lg font-bold text-center">
+            {isPlaceholder ? "Hi There!" : "Key Takeaways"}
+          </h3>
           <p className="text-gray-700 text-sm mt-2">
             {currentExperience.description}
           </p>

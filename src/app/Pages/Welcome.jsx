@@ -36,7 +36,8 @@ const WelcomePage = ({ onComplete }) => {
               alt="Welcome Background"
               className="w-full h-full object-cover"
             />
-            <div className="absolute inset-0 bg-black/50" /> {/* Dark Overlay */}
+            <div className="absolute inset-0 bg-black/50" />{" "}
+            {/* Dark Overlay */}
           </div>
 
           {/* Main Content */}
@@ -52,7 +53,9 @@ const WelcomePage = ({ onComplete }) => {
                   }}
                   className="transition-all duration-300"
                 >
-                  {React.createElement(Icon, { className: "w-10 h-10 text-white/80" })}
+                  {React.createElement(Icon, {
+                    className: "w-10 h-10 text-white/80",
+                  })}
                 </motion.div>
               ))}
             </motion.div>
@@ -81,7 +84,10 @@ const WelcomePage = ({ onComplete }) => {
             <motion.button
               className="mt-6 px-6 py-3 bg-indigo-500 text-white rounded-lg font-semibold shadow-lg hover:bg-indigo-600 transition-all focus:outline-none focus:ring-4 focus:ring-indigo-300 animate-glow"
               onClick={handleClick}
-              whileHover={{ scale: 1.1, filter: "drop-shadow(0px 0px 12px rgba(99, 102, 241, 0.8))" }}
+              whileHover={{
+                scale: 1.1,
+                filter: "drop-shadow(0px 0px 12px rgba(99, 102, 241, 0.8))",
+              }}
               whileTap={{ scale: 0.9 }}
             >
               {step === 0 ? "Get Started" : "Great! Let's go!"}

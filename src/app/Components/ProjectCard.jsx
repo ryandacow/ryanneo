@@ -26,14 +26,18 @@ const ProjectCard = ({ project }) => {
         >
           <div className="flex flex-col items-center justify-center h-full px-5">
             {/* Render Icon or Image */}
-            {project.image && (<img
+            {project.image && (
+              <img
                 src={project.image}
                 alt={project.name}
                 className={`${
                   project.scale || "w-28 h-28"
                 } mb-4 object-contain`}
-              />)}
-            <h3 className="text-2xl font-bold mb-2">{project.name}</h3>
+              />
+            )}
+            <h3 className="text-2xl font-bold mb-2 text-center">
+              {project.name}
+            </h3>
             <p className="text-lg font-semibold text-center mb-4">
               {project.context}
             </p>
@@ -61,21 +65,32 @@ const ProjectCard = ({ project }) => {
                 <FaGithub /> Source
               </a>
               {/* View Button */}
-              {project.live ? 
-              (<a
-                href={project.live}
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={(e) => e.stopPropagation()}
-                className={`px-4 py-2 border-2 rounded-lg shadow-md transition text-sm flex items-center gap-2 text-indigo-500 bg-purple-100 border-indigo-500 hover:translate-y-[-3px]`}
-              >
-                <FaExternalLinkAlt /> View
-              </a>) :
-              <span
-              className="px-4 py-2 border-2 rounded-lg shadow-md transition text-sm text-indigo-500 bg-purple-100 border-indigo-500 hover:translate-y-[-3px]"
-              onClick={(e) => e.stopPropagation()}>
-              Site Discontinued :'(
-            </span>}   
+              {project.live === "discontinued" ? (
+                <span
+                  className="px-4 py-2 border-2 rounded-lg shadow-md transition text-sm text-indigo-500 bg-purple-100 border-indigo-500 hover:translate-y-[-3px]"
+                  onClick={(e) => e.stopPropagation()}
+                >
+                  Site Discontinued :'(
+                </span>
+              ) : project.live === "coming soon" ? (
+                <span
+                  className="px-4 py-2 border-2 rounded-lg shadow-md transition text-sm text-indigo-500 bg-purple-100 border-indigo-500 hover:translate-y-[-3px]"
+                  onClick={(e) => e.stopPropagation()}
+                >
+                  Coming Soon
+                </span>
+              ) : (
+                <a
+                  href={project.live}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={(e) => e.stopPropagation()}
+                  className="px-4 py-2 border-2 rounded-lg shadow-md transition text-sm flex items-center gap-2 text-indigo-500 bg-purple-100 border-indigo-500 hover:translate-y-[-3px]"
+                >
+                  <FaExternalLinkAlt /> View
+                </a>
+              )}
+
               {/* Optional Blog Button */}
               {project.blog && (
                 <a

@@ -53,7 +53,8 @@ const Navbar = () => {
     const element = document.getElementById(id);
     if (element) {
       const offset = 24; // Adjust for navbar height
-      const elementPosition = element.getBoundingClientRect().top + window.scrollY;
+      const elementPosition =
+        element.getBoundingClientRect().top + window.scrollY;
       window.scrollTo({
         top: elementPosition - offset, // Scroll to section position minus navbar height
         behavior: "smooth", // Enable smooth scrolling
@@ -66,7 +67,9 @@ const Navbar = () => {
       <div className="container mx-auto px-4 py-4 h-20 relative flex items-center">
         {/* Brand (Left) */}
         <div className="absolute left-0 items-start">
-          <div className="text-2xl l:pl-0 pl-6 text-gray-800 font-bold font-playwrite">RyanNeo</div>
+          <div className="text-2xl l:pl-0 pl-6 text-gray-800 font-bold font-playwrite">
+            RyanNeo
+          </div>
         </div>
 
         {/* Centered Nav Links */}
@@ -135,8 +138,7 @@ const Navbar = () => {
               <HiOutlineX />
             </button>
             <div className="absolute top-6 left-10 text-xl font-playwrite font-bold">
-            RyanNeo
-
+              RyanNeo
             </div>
             {navLinks.map((link) =>
               link.href.startsWith("#") ? (
@@ -157,28 +159,28 @@ const Navbar = () => {
                   {link.label}
                 </a>
               ) : (
-              <Link
-                key={link.id}
-                href={link.href}
-                onClick={(e) => {
-                  if (link.href.startsWith("#")) {
-                    e.preventDefault(); // Only prevent default for internal links
-                    handleScroll(link.id);
-                  }
-                  setIsMobileMenuOpen(false); // Close the menu for all links
-                }}
-                className={`block px-3 py-2 rounded-md transition-colors hover:bg-gray-300 ${
-                  activeSection === link.id
-                    ? "text-blue-600 font-bold"
-                    : "text-gray-800"
-                }`}
-              >
-                {link.label}
-              </Link>
+                <Link
+                  key={link.id}
+                  href={link.href}
+                  onClick={(e) => {
+                    if (link.href.startsWith("#")) {
+                      e.preventDefault(); // Only prevent default for internal links
+                      handleScroll(link.id);
+                    }
+                    setIsMobileMenuOpen(false); // Close the menu for all links
+                  }}
+                  className={`block px-3 py-2 rounded-md transition-colors hover:bg-gray-300 ${
+                    activeSection === link.id
+                      ? "text-blue-600 font-bold"
+                      : "text-gray-800"
+                  }`}
+                >
+                  {link.label}
+                </Link>
               )
             )}
-        {/* Time and Date (Mobile View) */}
-        <div className="absolute bottom-10 text-gray-800 text-center">
+            {/* Time and Date (Mobile View) */}
+            <div className="absolute bottom-10 text-gray-800 text-center">
               <div className="text-lg">{formattedTime} [SGT]</div>
               <div className="text-sm">{formattedDate}</div>
             </div>

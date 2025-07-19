@@ -11,4 +11,4 @@ tags: "Life"
 I made this website for the purpose of learning HTML and CSS frameworks like React, TailwindCSS, GSAP etc. Frameworks which are essential to building good and creative frontends which can enhance user experience.
 <br>
 
-Additionally, a personal project also meant that I could have the flexibility to try out different styles and frameworks without the pressure of time constraints that hackathons would have.
+A personal project also meant that I could have the flexibility to try out different styles and frameworks without the pressure of time constraints that hackathons would have.
