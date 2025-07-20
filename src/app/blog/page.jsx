@@ -1,4 +1,4 @@
-import BlogList from "./BlogList";
+import BlogList from "../../Pages/BlogList";
 
 export default function Page() {
   return <BlogList />;

@@ -3,11 +3,15 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { HiOutlineMenu, HiOutlineX } from "react-icons/hi";
+import { useRouter, usePathname } from "next/navigation";
 
 const Navbar = () => {
   const [activeSection, setActiveSection] = useState("home");
   const [currentTime, setCurrentTime] = useState(new Date());
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  const router = useRouter();
+  const pathname = usePathname();
 
   // Update current time every second
   useEffect(() => {
@@ -17,6 +21,8 @@ const Navbar = () => {
 
   // Intersection Observer to highlight the section currently in view
   useEffect(() => {
+    if (pathname !== "/") return;
+
     const sections = document.querySelectorAll("section[id]");
     const observerOptions = { threshold: 0.6 };
 
@@ -30,7 +36,13 @@ const Navbar = () => {
 
     sections.forEach((section) => observer.observe(section));
     return () => sections.forEach((section) => observer.unobserve(section));
-  }, []);
+  }, [pathname]);
+
+  useEffect(() => {
+    if (pathname === "/personality") {
+      setActiveSection("personality");
+    }
+  }, [pathname]);
 
   // Format time and date
   const timeOptions = { hour: "numeric", minute: "numeric", hour12: true };
@@ -45,20 +57,25 @@ const Navbar = () => {
     { id: "home", label: "Home", href: "#home" },
     { id: "about", label: "About", href: "#about" },
     { id: "portfolio", label: "Portfolio", href: "#portfolio" },
-    { id: "blog", label: "Blog", href: "/blog" }, // External link
+    { id: "blog", label: "Blog", href: "/blog" },
+    { id: "personality", label: "Personality", href: "/personality" },
   ];
 
   // Scroll handling function
-  const handleScroll = (id) => {
-    const element = document.getElementById(id);
-    if (element) {
-      const offset = 24; // Adjust for navbar height
-      const elementPosition =
-        element.getBoundingClientRect().top + window.scrollY;
-      window.scrollTo({
-        top: elementPosition - offset, // Scroll to section position minus navbar height
-        behavior: "smooth", // Enable smooth scrolling
-      });
+  const handleScrollorRedirect = (id) => {
+    if (pathname !== "/") {
+      router.push(`/#${id}`);
+    } else {
+      const element = document.getElementById(id);
+      if (element) {
+        const offset = 24; // Adjust for navbar height
+        const elementPosition =
+          element.getBoundingClientRect().top + window.scrollY;
+        window.scrollTo({
+          top: elementPosition - offset, // Scroll to section position minus navbar height
+          behavior: "smooth",
+        });
+      }
     }
   };
 
@@ -81,7 +98,7 @@ const Navbar = () => {
                 href={link.href}
                 onClick={(e) => {
                   e.preventDefault(); // Prevent default anchor behavior
-                  handleScroll(link.id); // Trigger the smooth scroll for internal links
+                  handleScrollorRedirect(link.id); // Trigger the smooth scroll for internal links
                 }}
                 className={`px-3 py-2 rounded-md transition-colors hover:bg-gray-300 ${
                   activeSection === link.id
@@ -92,7 +109,7 @@ const Navbar = () => {
                 {link.label}
               </a>
             ) : (
-              // For external links, use Link component without handleScroll
+              // For external links, use Link component without handleScrollorRedirect
               <Link
                 key={link.id}
                 href={link.href}
@@ -147,7 +164,7 @@ const Navbar = () => {
                   href={link.href}
                   onClick={(e) => {
                     e.preventDefault();
-                    handleScroll(link.id);
+                    handleScrollorRedirect(link.id);
                     setIsMobileMenuOpen(false);
                   }}
                   className={`block px-3 py-2 rounded-md transition-colors hover:bg-gray-300 ${
@@ -165,7 +182,7 @@ const Navbar = () => {
                   onClick={(e) => {
                     if (link.href.startsWith("#")) {
                       e.preventDefault(); // Only prevent default for internal links
-                      handleScroll(link.id);
+                      handleScrollorRedirect(link.id);
                     }
                     setIsMobileMenuOpen(false); // Close the menu for all links
                   }}

@@ -9,7 +9,7 @@ import {
   Trophy,
 } from "lucide-react";
 import { PiShirtFolded } from "react-icons/pi";
-import { projects } from "../../Data/dataProjects";
+import { projects } from "../Data/dataProjects";
 import { motion } from "framer-motion";
 
 const About = () => {

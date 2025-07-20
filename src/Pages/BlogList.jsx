@@ -36,10 +36,7 @@ const BlogList = () => {
         setSelectedTag={setSelectedTag}
       />
 
-      <section
-        id="blog"
-        className="min-h-screen py-16 w-full"
-      >
+      <section id="blog" className="min-h-screen py-16 w-full">
         <div className="container mx-auto px-6 pt-24 sm:px-8 lg:px-16">
           {/* BLOG POSTS */}
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">

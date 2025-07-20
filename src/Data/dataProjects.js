@@ -38,7 +38,7 @@ export const projects = [
       "ML Model trained on Hugging Face and Essay Datasets to identify OCEAN traits based off sentence inputs",
     // image: "/Website.png",
     source: "https://github.com/ryandacow/OCEAN_model",
-    live: "coming soon",
+    live: "/personality",
     scale: "h-80, w-80",
   },
 ];

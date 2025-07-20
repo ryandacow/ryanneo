@@ -3,50 +3,96 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { Code, Award, Briefcase } from "lucide-react";
-import ProjectCard from "../Components/ProjectCard";
-import ExperienceCard from "../Components/ExperienceCard";
-import TechStackIcon from "../Components/TechStackIcon";
-import { projects } from "../../Data/dataProjects"; 
-import { experiences } from "../../Data/dataExperience";
+import ProjectCard from "@/Components/ProjectCard";
+import ExperienceCard from "@/Components/ExperienceCard";
+import { projects } from "@/Data/dataProjects";
+import { experiences } from "@/Data/dataExperience";
 import { FaHtml5, FaCss3Alt, FaJs, FaReact } from "react-icons/fa";
-import { SiNextdotjs, SiFirebase, SiTailwindcss, SiMui, SiVercel , SiFlask , SiSpringboot, SiSupabase, SiRender} from "react-icons/si";
+import {
+  SiNextdotjs,
+  SiFirebase,
+  SiTailwindcss,
+  SiMui,
+  SiVercel,
+  SiFlask,
+  SiSpringboot,
+  SiSupabase,
+  SiRender,
+} from "react-icons/si";
 import { PiMicrosoftExcelLogoBold } from "react-icons/pi";
 
 const techStacks = [
-    { icon: <FaHtml5 size={40} className="text-orange-500" />, language: "HTML" },
-    { icon: <FaCss3Alt size={40} className="text-blue-500" />, language: "CSS" },
-    { icon: <FaJs size={40} className="text-yellow-400" />, language: "JavaScript" },
-    { icon: <FaReact size={40} className="text-blue-400" />, language: "React" },
-    { icon: <img src="/Vite.svg" className="w-8 h-8" />, language: "Vite" },
-    { icon: <SiNextdotjs size={40} className="text-black-500" />, language: "Next" },
-    { icon: <SiMui size={40} className="text-sky-500" />, language: "MUI" },
-    { icon: <SiTailwindcss size={40} className="text-blue-400" />, language: "Tailwind" },
-    { icon: <SiSpringboot size={40} className="text-emerald-500" />, language: "SpringBoot" },
-    { icon: <img src="/SQL.svg" alt="SQL" className="w-7 h-10" />, language: "SQL" },
-    { icon: <SiSupabase size={40} className="text-emerald-300" />, language: "Supabase" },
-    { icon: <SiFirebase size={40} className="text-orange-400" />, language: "Firebase" },
-    { icon: <img src="/Python.svg" className="w-10 h-10" />, language: "Python" },
-    { icon: <SiFlask size={40} className="text-blue-500" />, language: "Flask" },
-    { icon: <img src="/Pandas.svg" alt="Pandas" className="w-10 h-10" />, language: "Pandas" },
-    { icon: <img src="/NumPy.svg" alt="NumPy" className="w-10 h-10" />, language: "NumPy" },
-    { icon: <img src="/Sklearn.svg" alt="Scikit-Learn" className="w-16 h-10" />, language: "Scikit-Learn" },
-    { icon: <img src="/HuggingFace.svg" alt="Hugging Face" className="w-10 h-10" />, language: "Hugging Face" },
-    { icon: <SiVercel size={40} className="text-black" />, language: "Vercel" },
-    { icon: <SiRender size={40} className="text-black" />, language: "Render" },
-    { icon: <PiMicrosoftExcelLogoBold size={40} className="text-green-600" />, language: "Excel" },
-    { icon: <img src="/PowerBi.svg" alt="Power BI" className="w-10 h-10" />, language: "Power BI" },
-  ];
+  { icon: <FaHtml5 size={40} className="text-orange-500" />, language: "HTML" },
+  { icon: <FaCss3Alt size={40} className="text-blue-500" />, language: "CSS" },
+  {
+    icon: <FaJs size={40} className="text-yellow-400" />,
+    language: "JavaScript",
+  },
+  { icon: <FaReact size={40} className="text-blue-400" />, language: "React" },
+  { icon: <img src="/Vite.svg" className="w-8 h-8" />, language: "Vite" },
+  {
+    icon: <SiNextdotjs size={40} className="text-black-500" />,
+    language: "Next",
+  },
+  { icon: <SiMui size={40} className="text-sky-500" />, language: "MUI" },
+  {
+    icon: <SiTailwindcss size={40} className="text-blue-400" />,
+    language: "Tailwind",
+  },
+  {
+    icon: <SiSpringboot size={40} className="text-emerald-500" />,
+    language: "SpringBoot",
+  },
+  {
+    icon: <img src="/SQL.svg" alt="SQL" className="w-7 h-10" />,
+    language: "SQL",
+  },
+  {
+    icon: <SiSupabase size={40} className="text-emerald-300" />,
+    language: "Supabase",
+  },
+  {
+    icon: <SiFirebase size={40} className="text-orange-400" />,
+    language: "Firebase",
+  },
+  { icon: <img src="/Python.svg" className="w-10 h-10" />, language: "Python" },
+  { icon: <SiFlask size={40} className="text-blue-500" />, language: "Flask" },
+  {
+    icon: <img src="/Pandas.svg" alt="Pandas" className="w-10 h-10" />,
+    language: "Pandas",
+  },
+  {
+    icon: <img src="/NumPy.svg" alt="NumPy" className="w-10 h-10" />,
+    language: "NumPy",
+  },
+  {
+    icon: <img src="/Sklearn.svg" alt="Scikit-Learn" className="w-16 h-10" />,
+    language: "Scikit-Learn",
+  },
+  {
+    icon: (
+      <img src="/HuggingFace.svg" alt="Hugging Face" className="w-10 h-10" />
+    ),
+    language: "Hugging Face",
+  },
+  { icon: <SiVercel size={40} className="text-black" />, language: "Vercel" },
+  { icon: <SiRender size={40} className="text-black" />, language: "Render" },
+  {
+    icon: <PiMicrosoftExcelLogoBold size={40} className="text-green-600" />,
+    language: "Excel",
+  },
+  {
+    icon: <img src="/PowerBi.svg" alt="Power BI" className="w-10 h-10" />,
+    language: "Power BI",
+  },
+];
 
 export default function PortfolioSection() {
   const [activeTab, setActiveTab] = useState("projects");
 
   return (
-    <section
-      id="portfolio"
-      className="min-h-screen w-full text-gray-800 pt-24" 
-    >
+    <section id="portfolio" className="min-h-screen w-full text-gray-800 pt-24">
       <div className="container mx-auto px-6">
-        
         {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: -20 }}
@@ -57,7 +103,8 @@ export default function PortfolioSection() {
         >
           <h2 className="text-3xl font-bold mb-4">Portfolio Showcase</h2>
           <p className="text-lg leading-relaxed">
-            Explore my journey through experience, projects, and technical expertise.
+            Explore my journey through experience, projects, and technical
+            expertise.
           </p>
         </motion.div>
 
@@ -70,9 +117,21 @@ export default function PortfolioSection() {
           className="flex flex-wrap justify-center gap-3 mb-12 px-4 md:px-8 lg:px-16"
         >
           {[
-        { id: "projects", icon: <Code className="w-4 h-4 md:w-5 md:h-5" />, label: "Projects" },
-        { id: "experiences", icon: <Briefcase className="w-4 h-4 md:w-5 md:h-5" />, label: "Experiences" },
-        { id: "techstack", icon: <Award className="w-4 h-4 md:w-5 md:h-5" />, label: "Tech Stack" },
+            {
+              id: "projects",
+              icon: <Code className="w-4 h-4 md:w-5 md:h-5" />,
+              label: "Projects",
+            },
+            {
+              id: "experiences",
+              icon: <Briefcase className="w-4 h-4 md:w-5 md:h-5" />,
+              label: "Experiences",
+            },
+            {
+              id: "techstack",
+              icon: <Award className="w-4 h-4 md:w-5 md:h-5" />,
+              label: "Tech Stack",
+            },
           ].map(({ id, icon, label }) => (
             <button
               key={id}
@@ -91,7 +150,6 @@ export default function PortfolioSection() {
 
         {/* Portfolio Content */}
         <div className="w-full max-w-6xl mx-auto">
-          
           {/* Projects Section */}
           {activeTab === "projects" && (
             <motion.div
@@ -133,12 +191,15 @@ export default function PortfolioSection() {
               transition={{ duration: 0.6, ease: "easeOut" }}
               className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-5 justify-center items-center text-center"
             >
-             {techStacks.map((stack, index) => (
-              <div key={index} className="flex flex-col justify-center items-center">
-                {stack.icon}
-                <p className="mt-2 text-sm">{stack.language}</p>
-              </div>
-            ))}
+              {techStacks.map((stack, index) => (
+                <div
+                  key={index}
+                  className="flex flex-col justify-center items-center"
+                >
+                  {stack.icon}
+                  <p className="mt-2 text-sm">{stack.language}</p>
+                </div>
+              ))}
             </motion.div>
           )}
         </div>
