@@ -1,12 +1,12 @@
 import { Inter } from "next/font/google";
 import { Playwrite_IT_Moderna } from "next/font/google";
-import { Analytics } from '@vercel/analytics/next';
+import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 
 const interfont = Inter({
   variable: "--font-inter", // Defines a CSS variable for use in CSS
   subsets: ["latin"],
-  weight: [ "500", "600"], // Adjust weights as needed
+  weight: ["500", "600"], // Adjust weights as needed
 });
 
 const playwriteFont = Playwrite_IT_Moderna({
@@ -17,11 +17,13 @@ const playwriteFont = Playwrite_IT_Moderna({
 
 export const metadata = {
   title: "Ryan Neo | Portfolio",
-  description: "Showcasing my projects in data science, AI, and full-stack development.",
+  description:
+    "Showcasing my projects in data science, AI, and full-stack development.",
   keywords: "portfolio, data science, AI, web development",
   openGraph: {
     title: "Ryan Neo | Portfolio",
-    description: "Check out my projects in data science, AI, and full-stack development.",
+    description:
+      "Check out my projects in data science, AI, and full-stack development.",
     url: "https://myportfolio.com",
     siteName: "Ryan Neo Portfolio",
     images: [
@@ -33,12 +35,21 @@ export const metadata = {
       },
     ],
     type: "website",
+    icons: {
+      icon: [
+        { url: "/favicon.png", type: "image/png" },
+        { url: "/favicon.ico" },
+      ],
+    },
   },
 };
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={`${interfont.variable} ${playwriteFont.variable}`}>
+    <html
+      lang="en"
+      className={`${interfont.variable} ${playwriteFont.variable}`}
+    >
       <body className="bg-[#f6ede6] w-full min-h-screen overflow-x-hidden antialiased">
         {children}
         <Analytics />

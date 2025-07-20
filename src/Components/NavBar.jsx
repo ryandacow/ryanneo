@@ -4,6 +4,7 @@ import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { HiOutlineMenu, HiOutlineX } from "react-icons/hi";
 import { useRouter, usePathname } from "next/navigation";
+import Image from "next/image";
 
 const Navbar = () => {
   const [activeSection, setActiveSection] = useState("home");
@@ -84,8 +85,11 @@ const Navbar = () => {
       <div className="container mx-auto px-4 py-4 h-20 relative flex items-center">
         {/* Brand (Left) */}
         <div className="absolute left-0 items-start">
-          <div className="text-2xl l:pl-0 pl-6 text-gray-800 font-bold font-playwrite">
-            RyanNeo
+          <div className="flex items-center l:pl-0 pl-6">
+            <Image src="/favicon.png" alt="Logo" width={40} height={40} />
+            <span className="ml-2 text-2xl text-gray-800 font-bold font-playwrite">
+              RyanNeo
+            </span>
           </div>
         </div>
 
