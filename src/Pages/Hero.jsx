@@ -105,7 +105,7 @@ const Hero = () => {
 
           <p className="hidden md:block text-md md:text-lg lg:text-lg mb-8 text-gray-600 max-w-2xl">
             Undergraduate at NUS, eager to learn and contribute! <br />
-            Actively seeking tech internship opportunities this summer! <br />
+            Actively seeking tech internship opportunities for Summer 2026! <br />
           </p>
 
           {/* Portfolio Button */}

@@ -32,13 +32,13 @@ export const projects = [
   },
   {
     id: 4,
-    name: "OCEAN Personality Trait Classifier",
+    name: "Personality Trait Classifier",
     context: "Personal Project",
     shortDesc:
-      "ML Model trained on Hugging Face and Essay Datasets to identify OCEAN traits based off sentence inputs",
-    // image: "/Website.png",
+      "ML model that identifies OCEAN traits from sentence inputs",
+    image: "/OCEAN_Project_Logo.png",
     source: "https://github.com/ryandacow/OCEAN_model",
     live: "/personality",
-    scale: "h-80, w-80",
+    // scale: "h-80, w-80",
   },
 ];
